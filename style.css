@@ -125,6 +125,26 @@ section {
     margin-bottom: 2rem;
 }
 
+/* --- NOVA REGRA PARA O VÍDEO --- */
+.slide iframe {
+    width: 90%;
+    /* Ocupa 90% da largura do contêiner do slide */
+    max-width: 900px;
+    /* Define uma largura máxima para não ficar excessivamente grande */
+    aspect-ratio: 16 / 9;
+    /* Mantém a proporção de vídeo 16:9 (widescreen) */
+    height: auto;
+    /* Permite que a altura seja definida pelo aspect-ratio */
+    border: none;
+    /* Remove a borda padrão do iframe */
+    border-radius: 10px;
+    /* Adiciona bordas arredondadas para combinar com as imagens */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* Adiciona uma sombra para destaque */
+}
+
+/* --- FIM DA NOVA REGRA --- */
+
 /* Code block styling */
 pre {
     width: 80%;
