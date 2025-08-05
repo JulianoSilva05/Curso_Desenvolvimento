@@ -36,16 +36,14 @@
                 <h2>O que é PHP?</h2>
                 <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1470"
                     alt="Diagrama de fluxo cliente-servidor.">
-                [cite_start]<p>A linguagem PHP (Hypertext Preprocessor), criada por Rasmus Lerdorf em 1994, é uma
-                    linguagem de código aberto voltada para o desenvolvimento web[cite: 282]. [cite_start]O código é
-                    interpretado no lado do servidor, que processa a lógica e envia o resultado como uma página HTML
-                    para o navegador do usuário[cite: 282].</p>
+                <p>A linguagem PHP (Hypertext Preprocessor), criada por Rasmus Lerdorf em 1994, é uma linguagem de
+                    código aberto voltada para o desenvolvimento web. O código é interpretado no lado do servidor, que
+                    processa a lógica e envia o resultado como uma página HTML para o navegador do usuário.</p>
             </div>
             <div class="slide">
                 <h2>Seu Primeiro Código</h2>
-                [cite_start]<p>O código PHP é escrito dentro das tags <code>&lt;?php ... ?&gt;</code> e os arquivos são
-                    salvos com a extensão <code>.php</code>[cite: 442]. [cite_start]O comando <code>echo</code> é usado
-                    para exibir texto[cite: 627].</p>
+                <p>O código PHP é escrito dentro das tags <code>&lt;?php ... ?&gt;</code> e os arquivos são salvos com a
+                    extensão <code>.php</code>. O comando <code>echo</code> é usado para exibir texto.</p>
                 <pre><code class="language-php">
 &lt;html&gt;
   &lt;body&gt;
@@ -69,7 +67,7 @@
                 <div class="quiz">
                     <div class="quiz-question"
                         data-tip="Rasmus Lerdorf é conhecido como o pai da linguagem PHP, tendo lançado a primeira versão em 1994/1995.">
-                        <p>1. [cite_start]Quem foi o criador da linguagem PHP? [cite: 282, 3050]</p>
+                        <p>1. Quem foi o criador da linguagem PHP?</p>
                         <ul class="quiz-options">
                             <li>a) Guido Van Rossum</li>
                             <li data-correct="true">b) Rasmus Lerdorf</li>
@@ -81,8 +79,8 @@
             <div class="slide activity-slide">
                 <h2>Atividade Prática - Tema 01</h2>
                 <p><strong>Desafio em Grupo:</strong> Crie um folder explicando a diferença entre as três linguagens
-                    estudadas: PHP, Ruby e Python. [cite_start]Apresente características encontradas na internet e
-                    utilize o celular para auxiliar[cite: 2680, 2681].</p>
+                    estudadas: PHP, Ruby e Python. Apresente características encontradas na internet e utilize o celular
+                    para auxiliar.</p>
             </div>
         </section>
 
@@ -95,31 +93,31 @@
             </div>
             <div class="slide">
                 <h2>Tipos de Dados Primitivos</h2>
-                [cite_start]<p>Uma variável é um local temporário para guardar dados[cite: 536]. [cite_start]Em PHP,
-                    elas começam com <code>$</code> e guardam diferentes tipos de dados[cite: 538].</p>
+                <p>Uma variável é um local temporário para guardar dados. Em PHP, elas começam com <code>$</code> e
+                    guardam diferentes tipos de dados.</p>
                 <pre><code class="language-php">
-[cite_start]// String (Texto) [cite: 540]
+// String (Texto)
 $nome = "Anselmo";
 
-[cite_start]// Integer (Inteiro) [cite: 552]
+// Integer (Inteiro)
 $idade = 38;
 
-[cite_start]// Float (Ponto Flutuante / Decimal) [cite: 564]
+// Float (Ponto Flutuante / Decimal)
 $salario = 3000.50;
 
-[cite_start]// Boolean (Verdadeiro ou Falso) [cite: 576]
+// Boolean (Verdadeiro ou Falso)
 $casado = true;
                 </code></pre>
             </div>
             <div class="slide">
                 <h2>Exibição e Concatenação</h2>
-                [cite_start]<p>Use <code>echo</code> para exibir dados[cite: 627]. [cite_start]Use o ponto
-                    <code>.</code> para unir (concatenar) strings e variáveis[cite: 654].</p>
+                <p>Use <code>echo</code> para exibir dados. Use o ponto <code>.</code> para unir (concatenar) strings e
+                    variáveis.</p>
                 <pre><code class="language-php">
 $aluno = "Carol almeida";
 $curso = "Técnico em informática";
 
-[cite_start]// Exibindo os dados concatenados [cite: 662]
+// Exibindo os dados concatenados
 echo "Aluno: " . $aluno . " | Curso: " . $curso;
                 </code></pre>
             </div>
@@ -135,8 +133,7 @@ echo "Aluno: " . $aluno . " | Curso: " . $curso;
                 <div class="quiz">
                     <div class="quiz-question"
                         data-tip="Para declarar uma variável em PHP, é necessário usar o símbolo $ na frente do nome da variável.">
-                        <p>1. [cite_start]Qual símbolo é obrigatório no início do nome de uma variável em PHP? [cite:
-                            538]</p>
+                        <p>1. Qual símbolo é obrigatório no início do nome de uma variável em PHP?</p>
                         <ul class="quiz-options">
                             <li>a) &</li>
                             <li>b) %</li>
@@ -147,9 +144,8 @@ echo "Aluno: " . $aluno . " | Curso: " . $curso;
             </div>
             <div class="slide activity-slide">
                 <h2>Atividade Prática - Tema 02</h2>
-                [cite_start]<p><strong>Meu Primeiro Script com Variáveis:</strong> Faça um programa que mostre o nome, a
-                    idade e a escola de um aluno, usando variáveis, o comando `echo` e o operador de concatenação[cite:
-                    740].</p>
+                <p><strong>Meu Primeiro Script com Variáveis:</strong> Faça um programa que mostre o nome, a idade e a
+                    escola de um aluno, usando variáveis, o comando `echo` e o operador de concatenação.</p>
             </div>
         </section>
 
@@ -162,32 +158,32 @@ echo "Aluno: " . $aluno . " | Curso: " . $curso;
             </div>
             <div class="slide">
                 <h2>Operadores Aritméticos</h2>
-                [cite_start]<p>São responsáveis por fazer os cálculos tradicionais usados na matemática[cite: 759].</p>
+                <p>São responsáveis por fazer os cálculos tradicionais usados na matemática.</p>
                 <pre><code class="language-php">
 $v1 = 15;
 $v2 = 12;
 
-$soma = $v1 + $v2; [cite_start]// Adição [cite: 765]
-$subtracao = $v1 - $v2; [cite_start]// Subtração [cite: 765]
-$multiplicacao = $v1 * $v2; [cite_start]// Multiplicação [cite: 765]
-$divisao = $v1 / $v2; [cite_start]// Divisão [cite: 765]
-$modulo = $v1 % $v2; [cite_start]// Resto da divisão [cite: 765]
+$soma = $v1 + $v2; // Adição
+$subtracao = $v1 - $v2; // Subtração
+$multiplicacao = $v1 * $v2; // Multiplicação
+$divisao = $v1 / $v2; // Divisão
+$modulo = $v1 % $v2; // Resto da divisão
 
 echo "A soma é: " . $soma;
                 </code></pre>
             </div>
             <div class="slide">
                 <h2>Operadores de Comparação</h2>
-                [cite_start]<p>Têm a finalidade de comparar valores e dados na programação[cite: 780, 781]. O resultado
-                    é sempre um booleano (`true` ou `false`).</p>
+                <p>Têm a finalidade de comparar valores e dados na programação. O resultado é sempre um booleano (`true`
+                    ou `false`).</p>
                 <pre><code class="language-php">
 $b = 10;
 $c = "10";
 
-var_dump($b == $c);   [cite_start]// bool(true) - '==' Igualdade, compara apenas o valor [cite: 783]
-var_dump($b === $c);  [cite_start]// bool(false) - '===' Idêntico, compara valor E tipo [cite: 783]
-var_dump($b != $c);   [cite_start]// bool(false) - '!=' Não igual [cite: 783]
-var_dump($b > 5);     [cite_start]// bool(true) - '>' Maior que [cite: 783]
+var_dump($b == $c);   // bool(true) - '==' Igualdade, compara apenas o valor
+var_dump($b === $c);  // bool(false) - '===' Idêntico, compara valor E tipo
+var_dump($b != $c);   // bool(false) - '!=' Não igual
+var_dump($b > 5);     // bool(true) - '>' Maior que
                 </code></pre>
             </div>
             <div class="slide">
@@ -202,8 +198,7 @@ var_dump($b > 5);     [cite_start]// bool(true) - '>' Maior que [cite: 783]
                 <div class="quiz">
                     <div class="quiz-question"
                         data-tip="O operador '===' (Idêntico) retorna verdadeiro apenas se os operandos forem iguais e do mesmo tipo.">
-                        <p>1. [cite_start]Qual operador é usado para verificar se dois valores são iguais E do mesmo
-                            tipo? [cite: 783]</p>
+                        <p>1. Qual operador é usado para verificar se dois valores são iguais E do mesmo tipo?</p>
                         <ul class="quiz-options">
                             <li>a) ==</li>
                             <li data-correct="true">b) ===</li>
@@ -214,9 +209,9 @@ var_dump($b > 5);     [cite_start]// bool(true) - '>' Maior que [cite: 783]
             </div>
             <div class="slide activity-slide">
                 <h2>Atividade Prática - Tema 03</h2>
-                [cite_start]<p><strong>Calculadora de Média:</strong> Faça um algoritmo em PHP que solicita três notas
-                    de um aluno, calcula a média e mostra o resultado na tela, junto com o nome do aluno, usando os
-                    elementos `echo` e o operador ternário[cite: 901].</p>
+                <p><strong>Calculadora de Média:</strong> Faça um algoritmo em PHP que solicita três notas de um aluno,
+                    calcula a média e mostra o resultado na tela, junto com o nome do aluno, usando os elementos `echo`
+                    e o operador ternário.</p>
             </div>
         </section>
 
@@ -229,37 +224,36 @@ var_dump($b > 5);     [cite_start]// bool(true) - '>' Maior que [cite: 783]
             </div>
             <div class="slide">
                 <h2>Estruturas Condicionais</h2>
-                [cite_start]<p>Permitem que o programa execute blocos de código diferentes com base em condições[cite:
-                    918, 919].</p>
+                <p>Permitem que o programa execute blocos de código diferentes com base em condições.</p>
                 <pre><code class="language-php">
 $hora = date('H'); // Pega a hora atual do servidor
 
-[cite_start]if ($hora < 12) { // Caso a expressão seja verdadeira (true), a programação segue um caminho [cite: 922]
+if ($hora < 12) { // Caso a expressão seja verdadeira (true), a programação segue um caminho
   echo "Acorda, Bom dia!";
-[cite_start]} elseif ($hora < 18) { // Combinação entre ELSE e IF [cite: 951]
+} elseif ($hora < 18) { // Combinação entre ELSE e IF
   echo "Hora do café, Boa tarde!";
-[cite_start]} else { // Caso seja falso, determina-se uma sequência lógica [cite: 935]
+} else { // Caso seja falso, determina-se uma sequência lógica
   echo "Tomar banho, Boa noite";
 }
                 </code></pre>
             </div>
             <div class="slide">
                 <h2>Laços de Repetição (Loops)</h2>
-                [cite_start]<p>Usados para executar o mesmo bloco de código várias vezes[cite: 990].</p>
+                <p>Usados para executar o mesmo bloco de código várias vezes.</p>
                 <pre><code class="language-php">
-[cite_start]// 'for': executa um número definido de vezes, com início e fim específico[cite: 1038, 1039].
+// 'for': executa um número definido de vezes, com início e fim específico.
 for ($i = 1; $i <= 5; $i++) {
   echo $i . " ";
 }
 
-// 'while': executa enquanto uma condição for verdadeira. [cite_start]Sabe-se o início, mas não o fim[cite: 994].
+// 'while': executa enquanto uma condição for verdadeira. Sabe-se o início, mas não o fim.
 $num = 1;
 while ($num <= 5) {
   echo $num . " ";
   $num++;
 }
 
-[cite_start]// 'foreach': ideal para percorrer arrays[cite: 1050].
+// 'foreach': ideal para percorrer arrays.
 $frutas = array("Maçã", "Banana", "Laranja");
 foreach ($frutas as $fruta) {
   echo $fruta . " ";
@@ -271,8 +265,7 @@ foreach ($frutas as $fruta) {
                 <div class="quiz">
                     <div class="quiz-question"
                         data-tip="O laço 'foreach' foi projetado especificamente para iterar sobre os elementos de um array, tornando o código mais limpo e legível.">
-                        <p>1. [cite_start]Qual laço de repetição é ideal para percorrer todos os itens de um array?
-                            [cite: 1050]</p>
+                        <p>1. Qual laço de repetição é ideal para percorrer todos os itens de um array?</p>
                         <ul class="quiz-options">
                             <li>a) for</li>
                             <li data-correct="true">b) foreach</li>
@@ -284,7 +277,7 @@ foreach ($frutas as $fruta) {
             <div class="slide activity-slide">
                 <h2>Atividade Prática - Tema 04</h2>
                 <p><strong>Calculadora de IMC:</strong> Faça um programa em PHP que define o peso e a altura de uma
-                    pessoa. [cite_start]Calcule e mostre o IMC (Índice de Massa Corporal)[cite: 1102, 1103].</p>
+                    pessoa. Calcule e mostre o IMC (Índice de Massa Corporal).</p>
             </div>
         </section>
 
@@ -297,22 +290,20 @@ foreach ($frutas as $fruta) {
             </div>
             <div class="slide">
                 <h2>Tipos de Array</h2>
-                [cite_start]<p>Um Array é uma estrutura que armazena múltiplos valores em uma única variável[cite: 1130,
-                    1134].</p>
+                <p>Um Array é uma estrutura que armazena múltiplos valores em uma única variável.</p>
                 <ul>
-                    [cite_start]<li><strong>Arrays Indexados:</strong> Usam índices numéricos para acessar os
-                        elementos[cite: 1141].</li>
-                    [cite_start]<li><strong>Arrays Associativos:</strong> Usam chaves alfanuméricas (nomes) para acessar
-                        os elementos[cite: 1151].</li>
-                    [cite_start]<li><strong>Arrays Multidimensionais:</strong> Contêm outros arrays como elementos,
-                        formando uma matriz[cite: 1164, 1233].</li>
+                    <li><strong>Arrays Indexados:</strong> Usam índices numéricos para acessar os elementos.</li>
+                    <li><strong>Arrays Associativos:</strong> Usam chaves alfanuméricas (nomes) para acessar os
+                        elementos.</li>
+                    <li><strong>Arrays Multidimensionais:</strong> Contêm outros arrays como elementos, formando uma
+                        matriz.</li>
                 </ul>
                 <pre><code class="language-php">
-[cite_start]// Array Indexado [cite: 1143, 1145]
+// Array Indexado
 $frutas = array("maçã", "banana", "laranja");
 echo $frutas[0]; // imprime maçã
 
-[cite_start]// Array Associativo [cite: 1154, 1156]
+// Array Associativo
 $pessoa = array("nome" => "João", "idade" => 25);
 echo $pessoa["nome"]; // imprime João
                 </code></pre>
@@ -320,8 +311,8 @@ echo $pessoa["nome"]; // imprime João
             <div class="slide activity-slide">
                 <h2>Atividade Prática - Tema 05</h2>
                 <p><strong>Lista de Filmes:</strong> Faça uma matriz (array multidimensional) que organize seus filmes e
-                    gêneros favoritos. [cite_start]Depois, crie outra matriz que selecione somente o gênero que mais
-                    predomina na sua lista[cite: 1315].</p>
+                    gêneros favoritos. Depois, crie outra matriz que selecione somente o gênero que mais predomina na
+                    sua lista.</p>
             </div>
         </section>
 
@@ -334,24 +325,21 @@ echo $pessoa["nome"]; // imprime João
             </div>
             <div class="slide">
                 <h2>Métodos GET e POST</h2>
-                [cite_start]<p>Para enviar dados de um formulário HTML para o PHP, usamos os métodos GET e POST[cite:
-                    1348].</p>
+                <p>Para enviar dados de um formulário HTML para o PHP, usamos os métodos GET e POST.</p>
                 <ul>
-                    [cite_start]<li><strong>Método GET:</strong> Os dados são enviados pela URL[cite: 1358].
-                        [cite_start]É o método padrão, mas não suporta grande volume de dados e não é seguro para
-                        informações sensíveis[cite: 1358, 1359].</li>
-                    [cite_start]<li><strong>Método POST:</strong> Os dados não são passados pela URL, mas sim no corpo
-                        da requisição[cite: 1397]. [cite_start]É considerado mais seguro e recomendado para criar um
-                        CRUD[cite: 1398, 1400].</li>
+                    <li><strong>Método GET:</strong> Os dados são enviados pela URL. É o método padrão, mas não suporta
+                        grande volume de dados e não é seguro para informações sensíveis.</li>
+                    <li><strong>Método POST:</strong> Os dados não são passados pela URL, mas sim no corpo da
+                        requisição. É considerado mais seguro e recomendado para criar um CRUD.</li>
                 </ul>
                 <pre><code class="language-php">
-[cite_start]// Formulário HTML [cite: 1402]
+// Formulário HTML
 &lt;form action="pag.php" method="post"&gt;
   Nome: &lt;input type="text" name="cxnome"&gt;
   &lt;input type="submit" value="Enviar"&gt;
 &lt;/form&gt;
 
-[cite_start]// Recebendo dados com POST em pag.php [cite: 1419]
+// Recebendo dados com POST em pag.php
 $nome = $_POST["cxnome"];
 echo "Nome: " . $nome;
                 </code></pre>
@@ -359,9 +347,8 @@ echo "Nome: " . $nome;
             <div class="slide activity-slide">
                 <h2>Atividade Prática - Tema 06</h2>
                 <p><strong>Quiz Interativo:</strong> Faça um quiz usando PHP que na primeira tela receba o nome do
-                    participante. Faça 6 perguntas em sequência usando páginas diferentes. [cite_start]Na 7ª página,
-                    exiba o resultado com a quantidade de acertos e um botão para reiniciar[cite: 1493, 1494, 1495,
-                    1496, 1497].</p>
+                    participante. Faça 6 perguntas em sequência usando páginas diferentes. Na 7ª página, exiba o
+                    resultado com a quantidade de acertos e um botão para reiniciar.</p>
             </div>
         </section>
 
@@ -374,26 +361,25 @@ echo "Nome: " . $nome;
             </div>
             <div class="slide">
                 <h2>O que são Funções?</h2>
-                [cite_start]<p>Funções são blocos de código que podem ser reutilizados em diferentes partes do programa,
-                    evitando repetições e facilitando a manutenção[cite: 1523, 1528]. [cite_start]Existem as funções
-                    nativas (da própria linguagem) e as criadas pelo desenvolvedor[cite: 1521].</p>
+                <p>Funções são blocos de código que podem ser reutilizados em diferentes partes do programa, evitando
+                    repetições e facilitando a manutenção. Existem as funções nativas (da própria linguagem) e as
+                    criadas pelo desenvolvedor.</p>
                 <pre><code class="language-php">
-[cite_start]// Para criar uma função, usamos la palavra-chave function [cite: 1529]
-[cite_start]function soma($a, $b) { // $a e $b são parâmetros [cite: 1530]
+// Para criar uma função, usamos a palavra-chave function
+function soma($a, $b) { // $a e $b são parâmetros
   $resultado = $a + $b;
-  return $resultado; [cite_start]// 'return' envia um valor de volta [cite: 1532]
+  return $resultado; // 'return' envia um valor de volta
 }
 
-[cite_start]// Para usar a função, basta chamá-la pelo nome [cite: 1539]
-echo soma(3, 5); [cite_start]// imprime 8 [cite: 1542]
+// Para usar a função, basta chamá-la pelo nome
+echo soma(3, 5); // imprime 8
                 </code></pre>
             </div>
             <div class="slide activity-slide">
                 <h2>Atividade Prática - Tema 07</h2>
                 <p><strong>Sistema de Aceitação:</strong> Crie um formulário que receba nome, sexo e idade de uma
                     pessoa. Em PHP, se a pessoa for do sexo feminino e tiver menos de 25 anos, imprima o nome e a
-                    mensagem: "ACEITA". [cite_start]Caso contrário, imprima o nome e a mensagem: "NÃO ACEITA"[cite:
-                    1666, 1667].</p>
+                    mensagem: "ACEITA". Caso contrário, imprima o nome e a mensagem: "NÃO ACEITA".</p>
             </div>
         </section>
 
@@ -407,24 +393,23 @@ echo soma(3, 5); [cite_start]// imprime 8 [cite: 1542]
             <div class="slide">
                 <h2>Cookies vs. Sessões</h2>
                 <ul>
-                    [cite_start]<li><strong>Cookies:</strong> São pequenos arquivos gerados pelo servidor e armazenados
-                        no navegador do cliente[cite: 1686, 1698]. [cite_start]Eles guardam informações como fotos,
-                        vídeos e textos para acelerar o acesso futuro[cite: 1687].</li>
-                    [cite_start]<li><strong>Sessões (Session):</strong> Armazenam informações sobre um único usuário no
-                        servidor e ficam disponíveis para todas as páginas da aplicação[cite: 1688, 1694].
-                        [cite_start]São muito úteis para segurança e para funcionalidades como carrinhos de compra[cite:
-                        1695].</li>
+                    <li><strong>Cookies:</strong> São pequenos arquivos gerados pelo servidor e armazenados no navegador
+                        do cliente. Eles guardam informações como fotos, vídeos e textos para acelerar o acesso futuro.
+                    </li>
+                    <li><strong>Sessões (Session):</strong> Armazenam informações sobre um único usuário no servidor e
+                        ficam disponíveis para todas as páginas da aplicação. São muito úteis para segurança e para
+                        funcionalidades como carrinhos de compra.</li>
                 </ul>
                 <pre><code class="language-php">
-[cite_start]// Para usar sessões, inicie com session_start() em todas as páginas [cite: 1745]
+// Para usar sessões, inicie com session_start() em todas as páginas
 session_start();
 
-[cite_start]// Armazenando dados em uma variável de sessão [cite: 1742]
+// Armazenando dados em uma variável de sessão
 $_SESSION["usuario"] = "Anselmo Paulo";
 
 echo "Usuário logado: " . $_SESSION["usuario"];
 
-[cite_start]// Para finalizar a sessão (logout) [cite: 1752]
+// Para finalizar a sessão (logout)
 session_destroy();
                 </code></pre>
             </div>
@@ -432,8 +417,8 @@ session_destroy();
                 <h2>Atividade Prática - Tema 08</h2>
                 <p><strong>Comparador de Pessoas:</strong> Crie uma aplicação com 3 páginas. A primeira página coleta
                     dados (nome, idade, peso, altura) de uma pessoa e salva na sessão. A segunda página faz o mesmo para
-                    uma segunda pessoa. [cite_start]A terceira página compara e mostra quem é mais alto, mais velho e
-                    mais pesado[cite: 1829, 1830, 1836, 1837, 1838, 1839].</p>
+                    uma segunda pessoa. A terceira página compara e mostra quem é mais alto, mais velho e mais pesado.
+                </p>
             </div>
         </section>
 
@@ -446,24 +431,24 @@ session_destroy();
             </div>
             <div class="slide">
                 <h2>Conectando com MySQL e CRUD</h2>
-                [cite_start]<p>A conexão com o banco de dados é um ponto central de qualquer linguagem de
-                    programação[cite: 1853]. [cite_start]CRUD é um acrônimo para as quatro operações básicas de um banco
-                    de dados: Create (Criar), Read (Ler), Update (Atualizar) e Delete (Excluir)[cite: 2131].</p>
+                <p>A conexão com o banco de dados é um ponto central de qualquer linguagem de programação. CRUD é um
+                    acrônimo para as quatro operações básicas de um banco de dados: Create (Criar), Read (Ler), Update
+                    (Atualizar) e Delete (Excluir).</p>
                 <pre><code class="language-php">
-[cite_start]// 1. Arquivo de Conexão (conexao.php) [cite: 2066]
+// 1. Arquivo de Conexão (conexao.php)
 $server = "localhost";
 $user = "root";
 $password = "";
 $dbname = "bdloja2022";
 $conn = mysqli_connect($server, $user, $password, $dbname);
 
-[cite_start]// 2. Inserindo dados (Create) [cite: 2155]
+// 2. Inserindo dados (Create)
 include_once 'conexao.php';
 $nome = $_POST['cnome'];
 $sql = "insert into cliente (nome) values ('$nome')";
 $query = mysqli_query($conn, $sql);
 
-[cite_start]// 3. Consultando dados (Read) [cite: 2187]
+// 3. Consultando dados (Read)
 $consultar = "select * from tbcliente";
 $executar = mysqli_query($conn, $consultar);
 while ($linha = mysqli_fetch_array($executar)) {
@@ -473,8 +458,8 @@ while ($linha = mysqli_fetch_array($executar)) {
             </div>
             <div class="slide activity-slide">
                 <h2>Atividade Prática - Tema 09</h2>
-                [cite_start]<p><strong>Cadastro de Produtos:</strong> Faça um sistema de cadastro de produto com cinco
-                    campos, usando o CRUD completo (Create, Read, Update, Delete) em uma tabela[cite: 2415].</p>
+                <p><strong>Cadastro de Produtos:</strong> Faça um sistema de cadastro de produto com cinco campos,
+                    usando o CRUD completo (Create, Read, Update, Delete) em uma tabela.</p>
             </div>
         </section>
 
@@ -487,30 +472,29 @@ while ($linha = mysqli_fetch_array($executar)) {
             </div>
             <div class="slide">
                 <h2>Classes e Objetos</h2>
-                [cite_start]<p>A Programação Orientada a Objetos (POO) é uma maneira de programar de forma organizada,
-                    segura e reutilizável[cite: 2436].</p>
+                <p>A Programação Orientada a Objetos (POO) é uma maneira de programar de forma organizada, segura e
+                    reutilizável.</p>
                 <ul>
-                    [cite_start]<li><strong>Classe:</strong> É uma abstração, um modelo para criar objetos[cite: 2449].
-                        [cite_start]Ela agrupa comportamentos e características similares[cite: 2449].</li>
-                    [cite_start]<li><strong>Objeto:</strong> É a instância de uma classe, ou seja, a sua representação
-                        física que ocupa espaço na memória[cite: 2451, 2452]. [cite_start]Para instanciar uma classe,
-                        usa-se o comando `new`[cite: 2453].</li>
+                    <li><strong>Classe:</strong> É uma abstração, um modelo para criar objetos. Ela agrupa
+                        comportamentos e características similares.</li>
+                    <li><strong>Objeto:</strong> É a instância de uma classe, ou seja, a sua representação física que
+                        ocupa espaço na memória. Para instanciar uma classe, usa-se o comando `new`.</li>
                 </ul>
                 <pre><code class="language-php">
-[cite_start]// Classe é uma entidade teórica, uma organização [cite: 2451]
+// Classe é uma entidade teórica, uma organização
 class Carro {
-    public $fabricante; [cite_start]// 'public' define a visibilidade [cite: 2479]
+    public $fabricante; // 'public' define a visibilidade
 }
 
-[cite_start]// Quando instanciamos, $car1 se torna um objeto [cite: 2462]
+// Quando instanciamos, $car1 se torna um objeto
 $car1 = new Carro();
-$car1->fabricante = 'VW'; [cite_start]// Atribuindo um valor à propriedade [cite: 2460]
+$car1->fabricante = 'VW'; // Atribuindo um valor à propriedade
                 </code></pre>
             </div>
             <div class="slide activity-slide">
                 <h2>Atividade Prática - Tema 10</h2>
-                [cite_start]<p><strong>Lógica de Conexão:</strong> Como você pode encapsular a lógica de conexão a um
-                    banco de dados dentro de uma classe em PHP e por que isso é importante? [cite: 2518]</p>
+                <p><strong>Lógica de Conexão:</strong> Como você pode encapsular a lógica de conexão a um banco de dados
+                    dentro de uma classe em PHP e por que isso é importante?</p>
             </div>
         </section>
     </main>
