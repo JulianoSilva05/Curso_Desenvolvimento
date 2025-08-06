@@ -30,82 +30,136 @@
             <div class="slide title-slide">
                 <img src="https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?auto=format&fit=crop&w=1470"
                     alt="Close-up de um monitor exibindo código PHP com sintaxe colorida.">
-                <h1>Tema 01: Conhecendo a Linguagem PHP</h1>
-                <h3>Uma Introdução ao Desenvolvimento Back-End</h3>
+                <h1>Tema 01: Preparando o Terreno para o PHP</h1>
+                <h3>Configurando seu Ambiente e Escrevendo o Primeiro Código</h3>
             </div>
+
             <div class="slide">
-                <h2>O que é PHP?</h2>
-                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1470"
-                    alt="Diagrama de fluxo cliente-servidor.">
-                <p>A linguagem PHP (Hypertext Preprocessor), criada por Rasmus Lerdorf em 1994, é uma linguagem de
-                    código aberto voltada para o desenvolvimento web. O código é interpretado no lado do servidor, que
-                    processa a lógica e envia o resultado como uma página HTML para o navegador do usuário.</p>
+                <h2>Ambiente de Desenvolvimento Local</h2>
+                <p>Para programar em PHP, não basta um editor de texto. Precisamos simular um servidor web em nosso
+                    próprio computador. Isso nos permite executar e testar nossos scripts PHP antes de publicá-los na
+                    internet.</p>
+                <p>Para isso, usamos um pacote de programas que nos fornece tudo o que precisamos. O mais famoso é o
+                    <strong>XAMPP</strong>.</p>
             </div>
+
+            <div class="slide">
+                <h2>O que é o XAMPP?</h2>
+                <p>XAMPP é um pacote de software gratuito que instala um ambiente de servidor web completo em seu
+                    computador. O nome é um acrônimo:</p>
+                <ul style="text-align: left; max-width: 600px;">
+                    <li><strong>X:</strong> Funciona em qualquer sistema (Windows, macOS, Linu<strong>x</strong>).</li>
+                    <li><strong>A:</strong> <strong>A</strong>pache, o programa de servidor web que irá processar nossas
+                        páginas.</li>
+                    <li><strong>M:</strong> <strong>M</strong>ariaDB (ou MySQL), o sistema de banco de dados que
+                        usaremos mais tarde.</li>
+                    <li><strong>P:</strong> <strong>P</strong>HP, a linguagem de programação que estamos aprendendo.
+                    </li>
+                    <li><strong>P:</strong> <strong>P</strong>erl, outra linguagem de programação incluída no pacote.
+                    </li>
+                </ul>
+                <img src="https://i.imgur.com/fAMtZ4w.png"
+                    alt="Painel de Controle do XAMPP mostrando os módulos Apache e MySQL."
+                    style="border: 2px solid #ccc; max-width: 700px;">
+                <p><small>Após instalar o XAMPP, você usará este painel para iniciar os serviços Apache e MySQL.</small>
+                </p>
+            </div>
+
+            <div class="slide">
+                <h2>Editor de Código: Visual Studio Code</h2>
+                <p>Para escrever nossos códigos, usaremos um editor moderno e poderoso. O <strong>Visual Studio Code (VS
+                        Code)</strong> é a ferramenta mais popular entre os desenvolvedores hoje em dia. Ele é gratuito,
+                    leve e possui milhares de extensões que facilitam nosso trabalho, como destaque de sintaxe,
+                    autocompletar e depuração de código.</p>
+                <img src="https://i.imgur.com/sSM9bYQ.png"
+                    alt="Interface do Visual Studio Code exibindo um arquivo PHP."
+                    style="border: 2px solid #ccc; max-width: 700px;">
+                <p><small>O VS Code organiza seus arquivos e colore o código para facilitar a leitura.</small></p>
+            </div>
+
+            <div class="slide">
+                <h2>Passo a Passo para Rodar seu Primeiro PHP</h2>
+                <ol style="text-align: left; max-width: 700px; line-height: 1.8;">
+                    <li><strong>Baixe e Instale o XAMPP:</strong> Acesse o site oficial <a
+                            href="https://www.apachefriends.org/" target="_blank">apachefriends.org</a> e instale a
+                        versão recomendada para o seu sistema.</li>
+                    <li><strong>Inicie o Servidor Apache:</strong> Abra o painel de controle do XAMPP e clique no botão
+                        "Start" ao lado do módulo "Apache".</li>
+                    <li><strong>Encontre a Pasta Mágica (htdocs):</strong> Dentro da pasta onde você instalou o XAMPP,
+                        encontre a subpasta chamada <code>htdocs</code>. É aqui que todos os seus projetos web devem ser
+                        salvos.</li>
+                    <li><strong>Crie seu Arquivo:</strong> Usando o Visual Studio Code, crie um novo arquivo e salve-o
+                        como <code>teste.php</code> dentro da pasta <code>htdocs</code>.</li>
+                    <li><strong>Acesse no Navegador:</strong> Abra seu navegador e digite o endereço:
+                        <code>http://localhost/teste.php</code>. O que você programou no arquivo aparecerá na tela!</li>
+                </ol>
+            </div>
+
             <div class="slide">
                 <h2>Seu Primeiro Código</h2>
-                <p>O código PHP é escrito dentro das tags <code>&lt;?php ... ?&gt;</code> e os arquivos são salvos com a
-                    extensão <code>.php</code>. O comando <code>echo</code> é usado para exibir texto.</p>
+                <p>O código PHP é escrito dentro das tags <code>&lt;?php ... ?&gt;</code>. Use o comando
+                    <code>echo</code> para exibir texto.</p>
                 <pre><code class="language-php">
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Meu primeiro site com PHP&lt;/h1&gt;
+&lt;head&gt;
+    &lt;title&gt;Meu Primeiro Site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Minha primeira página com PHP&lt;/h1&gt;
     &lt;?php
-      echo "Olá, Mundo!";
+      echo "Olá, Mundo! O servidor local está funcionando!";
     ?&gt;
-  &lt;/body&gt;
+&lt;/body&gt;
 &lt;/html&gt;
                 </code></pre>
             </div>
-            <div class="slide">
-                <h2>Vídeo Complementar</h2>
-                <iframe src="https://www.youtube.com/embed/qFLWokqyYb4"
-                    title="Como funciona o PHP? - @CursoemVideo  de PHP - Gustavo Guanabara" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="slide quiz-container">
+
+            <div id="quiz-tema1" class="slide quiz-container">
                 <h2>Quiz Rápido - Tema 01</h2>
                 <div class="quiz">
+                    <p class="quiz-title">Parte 1: Servidores</p>
                     <div class="quiz-question"
-                        data-tip="Rasmus Lerdorf é conhecido como o pai da linguagem PHP, tendo lançado a primeira versão em 1994/1995.">
-                        <p>1. Quem foi o criador da linguagem PHP?</p>
+                        data-tip="O Apache é o software de servidor web que interpreta e entrega as páginas PHP para o navegador. Ele faz parte do pacote XAMPP.">
+                        <p>1. No pacote XAMPP, qual componente é o servidor web responsável por executar nosso código
+                            PHP?</p>
                         <ul class="quiz-options">
-                            <li>a) Guido Van Rossum</li>
-                            <li data-correct="true">b) Rasmus Lerdorf</li>
-                            <li>c) Yukihiro Matsumoto</li>
+                            <li data-correct="true">a) Apache</li>
+                            <li>b) MySQL</li>
+                            <li>c) PHP</li>
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática: Sua Primeira Mensagem</h2>
-                <p>
-                    <strong>Objetivo:</strong> Vamos criar nossa primeira página dinâmica! O desafio é usar o comando
-                    <code>echo</code> do PHP para exibir uma mensagem de boas-vindas diretamente no navegador.
-                </p>
-
-                <h4>Passo a Passo:</h4>
-                <ul style="text-align: left; max-width: 600px;">
-                    <li>Crie um novo arquivo chamado <code>boas_vindas.php</code>.</li>
-                    <li>Dentro dele, adicione o código PHP abaixo.</li>
-                    <li>Salve e abra no navegador para ver o resultado!</li>
-                </ul>
-
-                <pre><code class="language-php">
-&lt;?php
-
-// O comando 'echo' envia um texto para a tela do navegador.
-// Tudo que estiver entre aspas será exibido.
-
-echo "Bem-vindo ao mundo do PHP! Estou pronto para aprender a programar para web.";
-
-?&gt;
-    </code></pre>
-
-                <p style="margin-top: 20px;">
-                    <strong>Resultado Esperado:</strong> Uma página em branco com a sua mensagem de boas-vindas exibida
-                    no topo.
-                </p>
+                <div class="quiz">
+                    <p class="quiz-title">Parte 2: Linguagem PHP</p>
+                    <div class="quiz-question"
+                        data-tip="O comando 'echo' é uma das construções mais fundamentais do PHP, usado para enviar dados (como texto e variáveis) para a saída, que geralmente é o navegador.">
+                        <p>2. Qual comando PHP é usado para exibir um texto na tela?</p>
+                        <ul class="quiz-options">
+                            <li>a) print_r</li>
+                            <li data-correct="true">b) echo</li>
+                            <li>c) var_dump</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="quiz">
+                    <p class="quiz-title">Parte 3: Passo a Passo</p>
+                    <div class="quiz-question"
+                        data-tip="A pasta 'htdocs' é a raiz do servidor web Apache no XAMPP. Todos os arquivos e pastas que você deseja acessar via 'http://localhost/' devem estar dentro dela.">
+                        <p>3. Em qual pasta do XAMPP devemos salvar nossos projetos PHP para que eles possam ser
+                            acessados pelo navegador?</p>
+                        <ul class="quiz-options">
+                            <li>a) /php/</li>
+                            <li>b) /xampp/</li>
+                            <li data-correct="true">c) /htdocs/</li>
+                        </ul>
+                    </div>
+                </div>
+                <button id="show-summary-tema1" class="summary-button">Ver Resumo e Dicas</button>
+                <div id="summary-tema1" class="quiz-summary" style="display:none;">
+                    <h3>Resumo do seu Desempenho</h3>
+                    <div id="summary-content-tema1"></div>
+                </div>
             </div>
         </section>
 
@@ -146,13 +200,6 @@ $curso = "Técnico em informática";
 echo "Aluno: " . $aluno . " | Curso: " . $curso;
                 </code></pre>
             </div>
-            <div class="slide">
-                <h2>Vídeo Complementar</h2>
-                <iframe src="https://www.youtube.com/embed/vxoSeATv0QA"
-                    title="Dominando o PHP #06 - Tipos de Dados Primitivos (Tipos Especiais)" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
             <div class="slide quiz-container">
                 <h2>Quiz Rápido - Tema 02</h2>
                 <div class="quiz">
@@ -166,11 +213,6 @@ echo "Aluno: " . $aluno . " | Curso: " . $curso;
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 02</h2>
-                <p><strong>Meu Primeiro Script com Variáveis:</strong> Faça um programa que mostre o nome, a idade e a
-                    escola de um aluno, usando variáveis, o comando `echo` e o operador de concatenação.</p>
             </div>
         </section>
 
@@ -211,13 +253,6 @@ var_dump($b != $c);   // bool(false) - '!=' Não igual
 var_dump($b > 5);     // bool(true) - '>' Maior que
                 </code></pre>
             </div>
-            <div class="slide">
-                <h2>Vídeo Complementar</h2>
-                <iframe src="https://www.youtube.com/embed/fCZdbl9-qkw"
-                    title="Operadores Aritméticos - Curso PHP Iniciante #05 - Gustavo Guanabara" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
             <div class="slide quiz-container">
                 <h2>Quiz Rápido - Tema 03</h2>
                 <div class="quiz">
@@ -231,12 +266,6 @@ var_dump($b > 5);     // bool(true) - '>' Maior que
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 03</h2>
-                <p><strong>Calculadora de Média:</strong> Faça um algoritmo em PHP que solicita três notas de um aluno,
-                    calcula a média e mostra o resultado na tela, junto com o nome do aluno, usando os elementos `echo`
-                    e o operador ternário.</p>
             </div>
         </section>
 
@@ -253,11 +282,11 @@ var_dump($b > 5);     // bool(true) - '>' Maior que
                 <pre><code class="language-php">
 $hora = date('H'); // Pega a hora atual do servidor
 
-if ($hora < 12) { // Caso a expressão seja verdadeira (true), a programação segue um caminho
+if ($hora < 12) {
   echo "Acorda, Bom dia!";
-} elseif ($hora < 18) { // Combinação entre ELSE e IF
+} elseif ($hora < 18) {
   echo "Hora do café, Boa tarde!";
-} else { // Caso seja falso, determina-se uma sequência lógica
+} else {
   echo "Tomar banho, Boa noite";
 }
                 </code></pre>
@@ -266,12 +295,12 @@ if ($hora < 12) { // Caso a expressão seja verdadeira (true), a programação s
                 <h2>Laços de Repetição (Loops)</h2>
                 <p>Usados para executar o mesmo bloco de código várias vezes.</p>
                 <pre><code class="language-php">
-// 'for': executa um número definido de vezes, com início e fim específico.
+// 'for': executa um número definido de vezes.
 for ($i = 1; $i <= 5; $i++) {
   echo $i . " ";
 }
 
-// 'while': executa enquanto uma condição for verdadeira. Sabe-se o início, mas não o fim.
+// 'while': executa enquanto uma condição for verdadeira.
 $num = 1;
 while ($num <= 5) {
   echo $num . " ";
@@ -299,11 +328,6 @@ foreach ($frutas as $fruta) {
                     </div>
                 </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 04</h2>
-                <p><strong>Calculadora de IMC:</strong> Faça um programa em PHP que define o peso e a altura de uma
-                    pessoa. Calcule e mostre o IMC (Índice de Massa Corporal).</p>
-            </div>
         </section>
 
         <section id="tema5">
@@ -318,10 +342,8 @@ foreach ($frutas as $fruta) {
                 <p>Um Array é uma estrutura que armazena múltiplos valores em uma única variável.</p>
                 <ul>
                     <li><strong>Arrays Indexados:</strong> Usam índices numéricos para acessar os elementos.</li>
-                    <li><strong>Arrays Associativos:</strong> Usam chaves alfanuméricas (nomes) para acessar os
-                        elementos.</li>
-                    <li><strong>Arrays Multidimensionais:</strong> Contêm outros arrays como elementos, formando uma
-                        matriz.</li>
+                    <li><strong>Arrays Associativos:</strong> Usam chaves nominais para acessar os elementos.</li>
+                    <li><strong>Arrays Multidimensionais:</strong> Contêm outros arrays, formando uma matriz.</li>
                 </ul>
                 <pre><code class="language-php">
 // Array Indexado
@@ -332,12 +354,6 @@ echo $frutas[0]; // imprime maçã
 $pessoa = array("nome" => "João", "idade" => 25);
 echo $pessoa["nome"]; // imprime João
                 </code></pre>
-            </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 05</h2>
-                <p><strong>Lista de Filmes:</strong> Faça uma matriz (array multidimensional) que organize seus filmes e
-                    gêneros favoritos. Depois, crie outra matriz que selecione somente o gênero que mais predomina na
-                    sua lista.</p>
             </div>
         </section>
 
@@ -352,10 +368,9 @@ echo $pessoa["nome"]; // imprime João
                 <h2>Métodos GET e POST</h2>
                 <p>Para enviar dados de um formulário HTML para o PHP, usamos os métodos GET e POST.</p>
                 <ul>
-                    <li><strong>Método GET:</strong> Os dados são enviados pela URL. É o método padrão, mas não suporta
-                        grande volume de dados e não é seguro para informações sensíveis.</li>
-                    <li><strong>Método POST:</strong> Os dados não são passados pela URL, mas sim no corpo da
-                        requisição. É considerado mais seguro e recomendado para criar um CRUD.</li>
+                    <li><strong>GET:</strong> Os dados são enviados pela URL. Não é seguro para informações sensíveis.
+                    </li>
+                    <li><strong>POST:</strong> Os dados não são passados pela URL. É mais seguro e recomendado.</li>
                 </ul>
                 <pre><code class="language-php">
 // Formulário HTML
@@ -369,12 +384,6 @@ $nome = $_POST["cxnome"];
 echo "Nome: " . $nome;
                 </code></pre>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 06</h2>
-                <p><strong>Quiz Interativo:</strong> Faça um quiz usando PHP que na primeira tela receba o nome do
-                    participante. Faça 6 perguntas em sequência usando páginas diferentes. Na 7ª página, exiba o
-                    resultado com a quantidade de acertos e um botão para reiniciar.</p>
-            </div>
         </section>
 
         <section id="tema7">
@@ -386,9 +395,8 @@ echo "Nome: " . $nome;
             </div>
             <div class="slide">
                 <h2>O que são Funções?</h2>
-                <p>Funções são blocos de código que podem ser reutilizados em diferentes partes do programa, evitando
-                    repetições e facilitando a manutenção. Existem as funções nativas (da própria linguagem) e as
-                    criadas pelo desenvolvedor.</p>
+                <p>Funções são blocos de código reutilizáveis. Existem as nativas (da linguagem) e as criadas pelo
+                    desenvolvedor.</p>
                 <pre><code class="language-php">
 // Para criar uma função, usamos a palavra-chave function
 function soma($a, $b) { // $a e $b são parâmetros
@@ -396,15 +404,9 @@ function soma($a, $b) { // $a e $b são parâmetros
   return $resultado; // 'return' envia um valor de volta
 }
 
-// Para usar a função, basta chamá-la pelo nome
+// Para usar a função, basta chamá-la
 echo soma(3, 5); // imprime 8
                 </code></pre>
-            </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 07</h2>
-                <p><strong>Sistema de Aceitação:</strong> Crie um formulário que receba nome, sexo e idade de uma
-                    pessoa. Em PHP, se a pessoa for do sexo feminino e tiver menos de 25 anos, imprima o nome e a
-                    mensagem: "ACEITA". Caso contrário, imprima o nome e a mensagem: "NÃO ACEITA".</p>
             </div>
         </section>
 
@@ -412,38 +414,27 @@ echo soma(3, 5); // imprime 8
             <div class="slide title-slide">
                 <img src="https://images.unsplash.com/photo-1614064641938-28354c433414?auto=format&fit=crop&w=1470"
                     alt="Um cadeado digital simbolizando segurança.">
-                <h1>Tema 08: Tipos de Cookies e Sessões</h1>
+                <h1>Tema 08: Cookies e Sessões</h1>
                 <h3>Gerenciando Dados do Usuário</h3>
             </div>
             <div class="slide">
                 <h2>Cookies vs. Sessões</h2>
                 <ul>
-                    <li><strong>Cookies:</strong> São pequenos arquivos gerados pelo servidor e armazenados no navegador
-                        do cliente. Eles guardam informações como fotos, vídeos e textos para acelerar o acesso futuro.
-                    </li>
-                    <li><strong>Sessões (Session):</strong> Armazenam informações sobre um único usuário no servidor e
-                        ficam disponíveis para todas as páginas da aplicação. São muito úteis para segurança e para
-                        funcionalidades como carrinhos de compra.</li>
+                    <li><strong>Cookies:</strong> Arquivos salvos no navegador do cliente para guardar informações.</li>
+                    <li><strong>Sessões:</strong> Armazenam informações no servidor, disponíveis para todas as páginas
+                        da aplicação. São mais seguras.</li>
                 </ul>
                 <pre><code class="language-php">
-// Para usar sessões, inicie com session_start() em todas as páginas
+// Para usar sessões, inicie com session_start()
 session_start();
 
-// Armazenando dados em uma variável de sessão
+// Armazenando dados na sessão
 $_SESSION["usuario"] = "Anselmo Paulo";
-
 echo "Usuário logado: " . $_SESSION["usuario"];
 
 // Para finalizar a sessão (logout)
 session_destroy();
                 </code></pre>
-            </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 08</h2>
-                <p><strong>Comparador de Pessoas:</strong> Crie uma aplicação com 3 páginas. A primeira página coleta
-                    dados (nome, idade, peso, altura) de uma pessoa e salva na sessão. A segunda página faz o mesmo para
-                    uma segunda pessoa. A terceira página compara e mostra quem é mais alto, mais velho e mais pesado.
-                </p>
             </div>
         </section>
 
@@ -451,14 +442,13 @@ session_destroy();
             <div class="slide title-slide">
                 <img src="https://images.unsplash.com/photo-1549430267-8a5a78f621d3?auto=format&fit=crop&w=1470"
                     alt="Servidores de banco de dados em um data center.">
-                <h1>Tema 09: Conexão com o banco de dados</h1>
+                <h1>Tema 09: Conexão com o Banco de Dados</h1>
                 <h3>Persistindo Dados com MySQL</h3>
             </div>
             <div class="slide">
                 <h2>Conectando com MySQL e CRUD</h2>
-                <p>A conexão com o banco de dados é um ponto central de qualquer linguagem de programação. CRUD é um
-                    acrônimo para as quatro operações básicas de um banco de dados: Create (Criar), Read (Ler), Update
-                    (Atualizar) e Delete (Excluir).</p>
+                <p>CRUD é um acrônimo para as quatro operações básicas de um banco de dados: Create (Criar), Read (Ler),
+                    Update (Atualizar) e Delete (Excluir).</p>
                 <pre><code class="language-php">
 // 1. Arquivo de Conexão (conexao.php)
 $server = "localhost";
@@ -468,23 +458,17 @@ $dbname = "bdloja2022";
 $conn = mysqli_connect($server, $user, $password, $dbname);
 
 // 2. Inserindo dados (Create)
-include_once 'conexao.php';
 $nome = $_POST['cnome'];
-$sql = "insert into cliente (nome) values ('$nome')";
+$sql = "INSERT INTO cliente (nome) VALUES ('$nome')";
 $query = mysqli_query($conn, $sql);
 
 // 3. Consultando dados (Read)
-$consultar = "select * from tbcliente";
-$executar = mysqli_query($conn, $consultar);
+$consulta = "SELECT * FROM tbcliente";
+$executar = mysqli_query($conn, $consulta);
 while ($linha = mysqli_fetch_array($executar)) {
     echo "Nome: " . $linha["nome"];
 }
                 </code></pre>
-            </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 09</h2>
-                <p><strong>Cadastro de Produtos:</strong> Faça um sistema de cadastro de produto com cinco campos,
-                    usando o CRUD completo (Create, Read, Update, Delete) em uma tabela.</p>
             </div>
         </section>
 
@@ -492,34 +476,28 @@ while ($linha = mysqli_fetch_array($executar)) {
             <div class="slide title-slide">
                 <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1470"
                     alt="Notebook com código orientado a objetos e diagramas de classe.">
-                <h1>Tema 10: Introdução ao conceito POO e classes com PHP</h1>
-                <h3>Organizando Código com Objetos</h3>
+                <h1>Tema 10: Introdução a POO com PHP</h1>
+                <h3>Organizando Código com Classes e Objetos</h3>
             </div>
             <div class="slide">
                 <h2>Classes e Objetos</h2>
-                <p>A Programação Orientada a Objetos (POO) é uma maneira de programar de forma organizada, segura e
-                    reutilizável.</p>
+                <p>A Programação Orientada a Objetos (POO) é uma forma de programar mais organizada e segura.</p>
                 <ul>
-                    <li><strong>Classe:</strong> É uma abstração, um modelo para criar objetos. Ela agrupa
-                        comportamentos e características similares.</li>
-                    <li><strong>Objeto:</strong> É a instância de uma classe, ou seja, a sua representação física que
-                        ocupa espaço na memória. Para instanciar uma classe, usa-se o comando `new`.</li>
+                    <li><strong>Classe:</strong> É um modelo para criar objetos, agrupando características similares.
+                    </li>
+                    <li><strong>Objeto:</strong> É a instância de uma classe, sua representação que ocupa espaço na
+                        memória.</li>
                 </ul>
                 <pre><code class="language-php">
-// Classe é uma entidade teórica, uma organização
+// Classe é um modelo
 class Carro {
     public $fabricante; // 'public' define a visibilidade
 }
 
-// Quando instanciamos, $car1 se torna um objeto
+// $car1 se torna um objeto (instância da classe)
 $car1 = new Carro();
-$car1->fabricante = 'VW'; // Atribuindo um valor à propriedade
+$car1->fabricante = 'VW';
                 </code></pre>
-            </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 10</h2>
-                <p><strong>Lógica de Conexão:</strong> Como você pode encapsular a lógica de conexão a um banco de dados
-                    dentro de uma classe em PHP e por que isso é importante?</p>
             </div>
         </section>
     </main>
