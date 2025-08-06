@@ -29,7 +29,8 @@ main {
     padding-top: 0;
 }
 
-/* --- Cabeçalho da Página de Cards --- */
+/* --- ESTILOS PARA A PÁGINA DE CARDS (INDEX.HTML) --- */
+
 .header {
     background-color: var(--secondary-color);
     color: white;
@@ -49,7 +50,6 @@ main {
     font-weight: 300;
 }
 
-/* --- Layout dos Cards --- */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -75,7 +75,6 @@ main {
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     width: 100%;
     border: 3px solid transparent;
-    /* Borda transparente para manter o alinhamento */
 }
 
 .course-card:hover {
@@ -83,7 +82,6 @@ main {
     box-shadow: 0 8px 20px rgba(45, 50, 80, 0.15);
 }
 
-/* --- REGRA PARA A CLASSE ACTIVE --- */
 .card-link.active .course-card {
     border-color: var(--primary-color);
     box-shadow: 0 8px 25px rgba(79, 93, 149, 0.25);
@@ -98,8 +96,6 @@ main {
 .card-content {
     padding: 1.5rem;
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .card-content h2 {
@@ -108,7 +104,6 @@ main {
     color: var(--primary-color);
 }
 
-/* --- Rodapé --- */
 .footer {
     text-align: center;
     padding: 1.5rem;
@@ -118,13 +113,184 @@ main {
     margin-top: 2rem;
 }
 
+/* --- ESTILOS PARA A PÁGINA DE SLIDES (BACKEND.HTML) --- */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 0.8rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+section {
+    width: 100%;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.slide {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    border-bottom: 1px dashed #ccc;
+    padding-top: 60px;
+    /* Garante que o conteúdo não fique sob o menu de navegação */
+}
+
+.slide:last-child {
+    border-bottom: none;
+}
+
+.slide.title-slide {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.title-slide h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.title-slide h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.slide h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.slide p,
+.slide ul li {
+    font-size: 1.1rem;
+    max-width: 800px;
+    text-align: center;
+}
+
+.slide ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.slide img {
+    max-width: 90%;
+    max-height: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1.5rem;
+}
+
+.slide iframe {
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+pre {
+    width: 95%;
+    max-width: 900px;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.quiz-container {
+    background-color: #fff;
+}
+
+.quiz {
+    width: 100%;
+    max-width: 800px;
+}
+
+ul.quiz-options {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.quiz-options li {
+    background-color: #f0f0f0;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    padding: 0.8rem;
+}
+
+ul.quiz-options li:hover {
+    transform: scale(1.02);
+    background-color: #e9e9e9;
+}
+
+li.correct {
+    background-color: var(--green-correct) !important;
+    color: var(--green-text);
+    border-color: var(--green-text);
+    font-weight: bold;
+}
+
+li.incorrect {
+    background-color: var(--red-incorrect) !important;
+    color: var(--red-text);
+    border-color: var(--red-text);
+    font-weight: bold;
+}
+
+.activity-slide {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.activity-slide h2 {
+    color: white;
+    border-bottom-color: white;
+}
+
 /* --- Media Queries para Responsividade --- */
 @media (min-width: 768px) {
-    .header h1 {
-        font-size: 3rem;
+    nav {
+        justify-content: center;
+        gap: 1.5rem;
     }
 
-    .card-container {
-        padding: 3rem;
+    .slide {
+        padding: 2rem 4rem;
+        padding-top: 80px;
     }
 }
