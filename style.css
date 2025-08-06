@@ -170,9 +170,12 @@ section {
     border-bottom: none;
 }
 
-.slide.title-slide {
-    background-color: var(--primary-color);
-    color: white;
+.slide.title-slide img {
+    max-height: 280px;
+    /* Define uma altura máxima menor para a imagem do título */
+    width: auto;
+    /* Garante que a largura se ajuste para manter a proporção */
+    margin-bottom: 1.5rem;
 }
 
 .title-slide h1 {
@@ -304,6 +307,79 @@ li.incorrect {
 .activity-slide h2 {
     color: white;
     border-bottom-color: white;
+}
+
+.summary-button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.summary-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.quiz-summary {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-left: 5px solid var(--primary-color);
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+.quiz-summary ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.quiz-summary li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.quiz-summary li:last-child {
+    border-bottom: none;
+}
+
+.summary-correct {
+    color: var(--green-text);
+    font-weight: bold;
+}
+
+.summary-incorrect {
+    color: var(--red-text);
+    font-weight: bold;
+}
+
+.summary-neutral {
+    color: #555;
+    font-style: italic;
+}
+
+/* --- Estilos para o Quiz e Resumo --- */
+
+.quiz-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.quiz:first-of-type .quiz-title {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .summary-button {

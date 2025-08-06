@@ -1,72 +1,82 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // --- Lógica de Interatividade do Quiz ---
-    const quizOptions = document.querySelectorAll('.quiz-options li');
+    const quizContainers = document.querySelectorAll('.quiz-container');
 
-    quizOptions.forEach(option => {
-        option.addEventListener('click', function () {
-            const questionDiv = this.closest('.quiz-question');
+    quizContainers.forEach(container => {
+        const options = container.querySelectorAll('.quiz-options li');
+        const summaryButton = container.querySelector('.summary-button');
+        const summaryArea = container.querySelector('.quiz-summary');
+        const summaryContent = container.querySelector('.summary-content');
 
-            // Impede que a mesma questão seja respondida várias vezes
-            if (questionDiv.classList.contains('answered')) {
-                return;
-            }
-
-            questionDiv.classList.add('answered');
-
-            const isCorrect = this.getAttribute('data-correct') === 'true';
-
-            if (isCorrect) {
-                this.classList.add('correct');
-            } else {
-                this.classList.add('incorrect');
-                // Opcional: Mostra a resposta correta se o usuário errar
-                const correctOption = questionDiv.querySelector('li[data-correct="true"]');
-                if (correctOption) {
-                    correctOption.classList.add('correct');
+        options.forEach(option => {
+            option.addEventListener('click', function () {
+                const questionDiv = this.closest('.quiz-question');
+                // Impede que a mesma questão seja respondida várias vezes
+                if (questionDiv.classList.contains('answered')) {
+                    return;
                 }
-            }
+                questionDiv.classList.add('answered');
+
+                const isCorrect = this.getAttribute('data-correct') === 'true';
+
+                if (isCorrect) {
+                    this.classList.add('correct');
+                } else {
+                    this.classList.add('incorrect');
+                    // Mostra a resposta correta se o usuário errar
+                    const correctOption = questionDiv.querySelector('li[data-correct="true"]');
+                    if (correctOption) {
+                        correctOption.classList.add('correct');
+                    }
+                }
+            });
         });
-    });
 
-    // --- Lógica para Navegação com Caneta de Apresentação / Teclado ---
-    const slides = document.querySelectorAll('.slide');
+        // Lógica para o botão de resumo
+        if (summaryButton) {
+            summaryButton.addEventListener('click', function () {
+                const questions = container.querySelectorAll('.quiz-question');
+                let summaryHTML = '<ul>';
+                let allAnswered = true;
 
-    document.addEventListener('keydown', function (event) {
-        // Verifica as teclas para "Próximo Slide" (Seta Direita, Page Down)
-        if (event.key === 'ArrowRight' || event.key === 'PageDown') {
-            event.preventDefault(); // Previne a rolagem padrão do navegador
-            const currentScroll = window.scrollY;
+                questions.forEach((q, index) => {
+                    // Verifica se todas as perguntas foram respondidas
+                    if (!q.classList.contains('answered')) {
+                        allAnswered = false;
+                    }
 
-            for (const slide of slides) {
-                // Encontra o primeiro slide que está abaixo da posição atual da tela
-                if (slide.offsetTop > currentScroll + 5) { // +5 é uma pequena margem de tolerância
-                    window.scrollTo({
-                        top: slide.offsetTop,
-                        behavior: 'smooth'
-                    });
-                    break; // Para a busca após encontrar o próximo slide
+                    const questionText = q.querySelector('p').textContent;
+                    const incorrectOption = q.querySelector('li.incorrect');
+                    const correctOption = q.querySelector('li.correct');
+                    const studyTip = q.getAttribute('data-tip');
+
+                    summaryHTML += `<li><strong>Questão ${index + 1}:</strong> ${questionText}<br>`;
+
+                    // Monta o resumo com base na resposta
+                    if (incorrectOption) { // Se o usuário errou
+                        summaryHTML += `<span class="summary-incorrect">Sua resposta estava incorreta.</span><br>`;
+                        summaryHTML += `<strong>Dica de Estudo:</strong> ${studyTip}`;
+                    } else if (correctOption && q.classList.contains('answered')) { // Se acertou
+                        summaryHTML += `<span class="summary-correct">Você acertou! Parabéns!</span>`;
+                    } else { // Se não respondeu
+                        summaryHTML += `<span class="summary-neutral">Você ainda não respondeu esta questão.</span>`;
+                    }
+                    summaryHTML += '</li>';
+                });
+
+                // Alerta se alguma questão não foi respondida
+                if (!allAnswered) {
+                    alert('Por favor, responda todas as perguntas antes de ver o resumo.');
+                    return;
                 }
-            }
-        }
 
-        // Verifica as teclas para "Slide Anterior" (Seta Esquerda, Page Up)
-        if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
-            event.preventDefault(); // Previne a rolagem padrão do navegador
-            const currentScroll = window.scrollY;
-
-            // Itera de trás para frente para encontrar o slide anterior
-            for (let i = slides.length - 1; i >= 0; i--) {
-                const slide = slides[i];
-                // Encontra o primeiro slide que está acima da posição atual da tela
-                if (slide.offsetTop < currentScroll - 5) {
-                    window.scrollTo({
-                        top: slide.offsetTop,
-                        behavior: 'smooth'
-                    });
-                    break; // Para a busca após encontrar o slide anterior
-                }
-            }
+                // Exibe o resumo
+                summaryHTML += '</ul>';
+                summaryContent.innerHTML = summaryHTML;
+                summaryArea.style.display = 'block';
+                summaryButton.style.display = 'none'; // Esconde o botão após clicar
+            });
         }
     });
 });
