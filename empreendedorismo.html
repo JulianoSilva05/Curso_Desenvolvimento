@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Empreendedorismo e Inovação Sustentável</title>
+
+    <style>
+        /* --- Variáveis Globais de Cores --- */
+        :root {
+            --primary-color: #005f73;
+            --secondary-color: #0a9396;
+            --light-bg: #e9d8a6;
+            --text-color: #333;
+            --card-bg: #FFFFFF;
+            --green-correct: #d4edda;
+            --red-incorrect: #f8d7da;
+            --green-text: #155724;
+            --red-text: #721c24;
+        }
+
+        /* --- Estilos Base --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        main {
+            padding-top: 60px;
+        }
+
+        /* --- Menu de Navegação --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            padding: 0.8rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            overflow-x: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* --- Estilos dos Slides --- */
+        section {
+            width: 100%;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        .slide {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 4rem;
+            box-sizing: border-box;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .slide:last-child {
+            border-bottom: none;
+        }
+
+        .slide.title-slide {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .title-slide img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .title-slide h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .title-slide h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .slide h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .slide p,
+        .slide ul li,
+        .slide ol li {
+            font-size: 1.2rem;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .slide ul, .slide ol {
+            text-align: left;
+            padding-left: 40px;
+            max-width: 750px;
+        }
+
+        /* --- Estilos do Quiz --- */
+        .quiz-container {
+            background-color: #fff;
+        }
+
+        .quiz {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .quiz-question {
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        ul.quiz-options {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        ul.quiz-options li {
+            background-color: #f0f0f0;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 1rem;
+        }
+
+        ul.quiz-options li:hover {
+            transform: scale(1.02);
+            border-color: var(--secondary-color);
+        }
+
+        .quiz-question.answered ul.quiz-options li {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        li.correct {
+            background-color: var(--green-correct) !important;
+            color: var(--green-text);
+            border-color: var(--green-text) !important;
+            font-weight: bold;
+            opacity: 1 !important;
+        }
+
+        li.incorrect {
+            background-color: var(--red-incorrect) !important;
+            color: var(--red-text);
+            border-color: var(--red-text) !important;
+            font-weight: bold;
+            opacity: 1 !important;
+        }
+
+        /* --- Estilos do Feedback e Resumo --- */
+        .summary-button {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .summary-button:hover {
+            background-color: #004b5a;
+        }
+
+        .quiz-summary {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-left: 5px solid var(--secondary-color);
+            max-width: 800px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .quiz-summary ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quiz-summary li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .quiz-summary li:last-child {
+            border-bottom: none;
+        }
+
+        .summary-correct {
+            color: var(--green-text);
+            font-weight: bold;
+        }
+
+        .summary-incorrect {
+            color: var(--red-text);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#tema1">Tema 01</a>
+        <a href="#tema2">Tema 02</a>
+        <a href="#tema3">Tema 03</a>
+        <a href="#tema4">Tema 04</a>
+        <a href="#tema5">Tema 05</a>
+    </nav>
+
+    <main>
+        <section id="tema1">
+            <div class="slide title-slide">
+                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1374" alt="Pessoas colaborando em um projeto.">
+                <h1>Tema 01: O que é Empreendedorismo?</h1>
+                <h3>Fases, Tipos e Comportamento Empreendedor</h3>
+            </div>
+
+            <div class="slide">
+                <h2>O Que é Empreender?</h2>
+                <p>Empreendedorismo é a capacidade de idealizar, coordenar e realizar projetos e negócios, assumindo riscos para criar algo novo que gere valor financeiro ou social. Não se limita a abrir uma empresa, mas também a inovar dentro de uma carreira profissional.</p>
+                <ul>
+                    <li><strong>Identificação de Oportunidades:</strong> Estar atento a problemas e necessidades que podem se tornar negócios.</li>
+                    <li><strong>Inovação:</strong> Criar novos produtos, serviços ou processos para se diferenciar no mercado.</li>
+                    <li><strong>Assumir Riscos:</strong> Investir recursos (tempo, dinheiro) sem garantia de sucesso, mas com planejamento.</li>
+                    <li><strong>Liderança e Gestão:</strong> Motivar equipes e gerenciar recursos de forma eficiente.</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <h2>Empreendedorismo no Brasil</h2>
+                <p>O empreendedorismo no Brasil cresceu muito a partir da década de 90, com o apoio de entidades como o Sebrae. Hoje, o país tem um ecossistema em expansão, especialmente em tecnologia.</p>
+                <ul>
+                    <li><strong>Por Inovação:</strong> Quando um empreendedor identifica uma oportunidade de mercado e cria algo novo e de valor.</li>
+                    <li><strong>Por Necessidade:</strong> Quando alguém inicia um negócio como forma de sobrevivência, devido a condições socioeconômicas desfavoráveis.</li>
+                </ul>
+            </div>
+            
+            <div class="slide quiz-container">
+                <h2>Quiz Rápido - Tema 01</h2>
+                <div class="quiz">
+                    <div class="quiz-question" data-tip="Empreender não é apenas sobre ter uma ideia, mas sobre a capacidade de assumir os riscos calculados para transformá-la em realidade.">
+                        <p>1. Qual das seguintes opções é uma característica essencial do comportamento empreendedor?</p>
+                        <ul class="quiz-options">
+                            <li>a) Evitar qualquer tipo de risco financeiro.</li>
+                            <li data-correct="true">b) Assumir riscos calculados para alcançar objetivos.</li>
+                            <li>c) Focar apenas em tarefas operacionais, sem planejamento.</li>
+                        </ul>
+                    </div>
+                    <div class="quiz-question" data-tip="O empreendedorismo por necessidade surge da falta de alternativas de emprego, enquanto o por inovação busca criar novas soluções e mercados.">
+                        <p>2. O que diferencia o "empreendedorismo por inovação" do "empreendedorismo por necessidade"?</p>
+                        <ul class="quiz-options">
+                            <li data-correct="true">a) O primeiro busca criar algo novo para o mercado, enquanto o segundo é motivado pela sobrevivência.</li>
+                            <li>b) O primeiro é exclusivo para a área de tecnologia, e o segundo para o comércio.</li>
+                            <li>c) Não há diferença, ambos têm as mesmas motivações e desafios.</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="summary-button">Ver Resumo e Dicas</button>
+                <div class="quiz-summary" style="display:none;">
+                    <h3>Resumo do seu Desempenho</h3>
+                    <div class="summary-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tema2">
+            <div class="slide title-slide">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1470" alt="Equipe planejando em um quadro branco.">
+                <h1>Tema 02: Planejamento e Ferramentas Essenciais</h1>
+                <h3>Plano de Negócios, Canvas, SWOT e Metas SMART</h3>
+            </div>
+            <div class="slide">
+                <h2>Plano de Negócios vs. Business Model Canvas</h2>
+                <p>Ambos são ferramentas de planejamento, mas com focos diferentes.</p>
+                <ul>
+                    <li><strong>Plano de Negócios:</strong> Um documento detalhado que descreve todos os aspectos de um negócio, como análise de mercado, plano operacional e projeções financeiras. É essencial para buscar investimentos.</li>
+                    <li><strong>Business Model Canvas:</strong> Uma ferramenta visual e estratégica que permite descrever e visualizar um modelo de negócios em uma única página. Seus 9 blocos ajudam a entender como a empresa cria, entrega e captura valor.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Análise SWOT e Metas SMART</h2>
+                <ul>
+                    <li><strong>Análise SWOT (FOFA):</strong> Uma ferramenta para avaliar a posição estratégica de uma empresa, analisando Forças (Strengths), Fraquezas (Weaknesses), Oportunidades (Opportunities) e Ameaças (Threats).</li>
+                    <li><strong>Metas SMART:</strong> Um método para definir metas eficazes. Elas devem ser Específicas (Specific), Mensuráveis (Measurable), Atingíveis (Achievable), Relevantes (Relevant) e Temporais (Time-bound).</li>
+                </ul>
+            </div>
+
+            <div class="slide quiz-container">
+                <h2>Quiz Rápido - Tema 02</h2>
+                <div class="quiz">
+                    <div class="quiz-question" data-tip="A análise SWOT é dividida em ambiente interno (Forças e Fraquezas) e ambiente externo (Oportunidades e Ameaças).">
+                        <p>1. Na análise SWOT, os fatores "Oportunidades" e "Ameaças" referem-se a quê?</p>
+                        <ul class="quiz-options">
+                            <li>a) Aos pontos fortes e fracos da equipe interna.</li>
+                            <li data-correct="true">b) Às circunstâncias do ambiente externo que podem impactar o negócio.</li>
+                            <li>c) Aos recursos financeiros disponíveis para a empresa.</li>
+                        </ul>
+                    </div>
+                    <div class="quiz-question" data-tip="O 'T' de SMART significa 'Temporal' ou 'Time-bound', indicando que toda meta precisa ter um prazo bem definido para ser cumprida.">
+                        <p>2. O que a letra 'T' representa na metodologia de metas SMART?</p>
+                        <ul class="quiz-options">
+                            <li>a) Tecnologia (Technology)</li>
+                            <li>b) Time (Team)</li>
+                            <li data-correct="true">c) Temporal (Time-bound)</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="summary-button">Ver Resumo e Dicas</button>
+                <div class="quiz-summary" style="display:none;">
+                    <h3>Resumo do seu Desempenho</h3>
+                    <div class="summary-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tema3">
+            <div class="slide title-slide">
+                <img src="https://images.unsplash.com/photo-1542751371-33cf235f1f51?auto=format&fit=crop&w=1470" alt="Pessoas apertando as mãos.">
+                <h1>Tema 03: Empreendedorismo com Propósito</h1>
+                <h3>Ética, Responsabilidade Social e Código de Conduta</h3>
+            </div>
+            <div class="slide">
+                <h2>Ética e Responsabilidade Social</h2>
+                <p>Agir com ética é fundamental para o sucesso a longo prazo de qualquer negócio. A responsabilidade social é a gestão baseada em uma relação transparente com todos os públicos (stakeholders).</p>
+                <ul>
+                    <li><strong>Ética Empresarial:</strong> Conjunto de valores e princípios que guiam as decisões corretas, evitando atalhos ilegais ou imorais como suborno, propaganda enganosa ou concorrência desleal.</li>
+                    <li><strong>Responsabilidade Social:</strong> Contribuir para o desenvolvimento sustentável da sociedade, preservando recursos e promovendo a redução das desigualdades.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Missão, Visão, Valores e Código de Conduta</h2>
+                <ul>
+                    <li><strong>Missão:</strong> A razão de existir da empresa. O que ela faz, para quem e como.</li>
+                    <li><strong>Visão:</strong> A imagem de futuro que a empresa deseja alcançar a longo prazo.</li>
+                    <li><strong>Valores:</strong> Os princípios éticos que guiam o comportamento e as decisões do negócio.</li>
+                    <li><strong>Código de Conduta:</strong> Um documento que formaliza os princípios e valores da empresa, servindo como um guia de comportamento para todos os colaboradores.</li>
+                </ul>
+            </div>
+
+            <div class="slide quiz-container">
+                <h2>Quiz Rápido - Tema 03</h2>
+                <div class="quiz">
+                    <div class="quiz-question" data-tip="A Missão é o 'porquê' da empresa, seu propósito fundamental. A Visão é 'aonde' ela quer chegar no futuro.">
+                        <p>1. Qual declaração define o propósito central e a razão de uma empresa existir?</p>
+                        <ul class="quiz-options">
+                            <li data-correct="true">a) Missão</li>
+                            <li>b) Visão</li>
+                            <li>c) Código de Conduta</li>
+                        </ul>
+                    </div>
+                     <div class="quiz-question" data-tip="Um Código de Conduta formaliza as regras e princípios éticos, garantindo que todos na empresa sigam um padrão de comportamento esperado.">
+                        <p>2. Qual é o principal objetivo de um Código de Conduta em uma empresa?</p>
+                        <ul class="quiz-options">
+                            <li>a) Aumentar o lucro a qualquer custo.</li>
+                            <li data-correct="true">b) Promover um comportamento uniforme e ético entre os colaboradores.</li>
+                            <li>c) Definir as metas de vendas para o próximo semestre.</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="summary-button">Ver Resumo e Dicas</button>
+                <div class="quiz-summary" style="display:none;">
+                    <h3>Resumo do seu Desempenho</h3>
+                    <div class="summary-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tema4">
+            <div class="slide title-slide">
+                 <img src="https://images.unsplash.com/photo-1542314831-068cd1dbb563?auto=format&fit=crop&w=1470" alt="Edifício moderno com vegetação.">
+                <h1>Tema 04: Inovação com Impacto</h1>
+                <h3>O Papel da Inovação Sustentável</h3>
+            </div>
+            <div class="slide">
+                <h2>O que é Inovação Sustentável?</h2>
+                <p>É o desenvolvimento de novas ideias, produtos ou serviços que equilibram o desenvolvimento econômico, social e ambiental. O objetivo é atender às necessidades do presente sem comprometer as gerações futuras.</p>
+                <ul>
+                    <li><strong>Ambiental:</strong> Minimizar impactos negativos no meio ambiente, usando energias renováveis e reduzindo resíduos.</li>
+                    <li><strong>Social:</strong> Promover a inclusão social, igualdade de oportunidades e respeito aos direitos humanos.</li>
+                    <li><strong>Econômica:</strong> Garantir a viabilidade financeira do negócio a longo prazo, sendo lucrativo e responsável.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>O Manual de Oslo</h2>
+                <p>É um guia internacional publicado pela OCDE que padroniza a coleta e interpretação de dados sobre inovação. Ele ajuda governos e empresas a medir e entender a inovação de forma consistente.</p>
+                <p>O Manual define quatro tipos de inovação:</p>
+                <ul>
+                    <li><strong>De Produto:</strong> Lançamento de um bem ou serviço novo ou significativamente melhorado.</li>
+                    <li><strong>De Processo:</strong> Implementação de um método de produção ou distribuição novo ou melhorado.</li>
+                    <li><strong>Organizacional:</strong> Novas práticas de negócios, organização do local de trabalho ou relações externas.</li>
+                    <li><strong>De Marketing:</strong> Implementação de um novo método de marketing com mudanças na concepção do produto, posicionamento, promoção ou preço.</li>
+                </ul>
+            </div>
+
+            <div class="slide quiz-container">
+                <h2>Quiz Rápido - Tema 04</h2>
+                 <div class="quiz">
+                    <div class="quiz-question" data-tip="A sustentabilidade nos negócios se baseia em três pilares: o sucesso econômico (lucro), o bem-estar social (pessoas) e a preservação ambiental (planeta).">
+                        <p>1. Quais são os três pilares que a sustentabilidade no empreendedorismo busca equilibrar?</p>
+                        <ul class="quiz-options">
+                            <li>a) Tecnologia, Marketing e Vendas.</li>
+                            <li data-correct="true">b) Aspectos Econômicos, Sociais e Ambientais.</li>
+                            <li>c) Inovação, Rapidez e Baixo Custo.</li>
+                        </ul>
+                    </div>
+                     <div class="quiz-question" data-tip="O Manual de Oslo é a principal referência mundial para padronizar como a inovação é medida e analisada, permitindo comparações entre países e setores.">
+                        <p>2. Qual é o principal objetivo do Manual de Oslo?</p>
+                        <ul class="quiz-options">
+                            <li data-correct="true">a) Padronizar a coleta e análise de dados sobre inovação.</li>
+                            <li>b) Financiar startups de base tecnológica.</li>
+                            <li>c) Criar um ranking das empresas mais inovadoras do mundo.</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="summary-button">Ver Resumo e Dicas</button>
+                <div class="quiz-summary" style="display:none;">
+                    <h3>Resumo do seu Desempenho</h3>
+                    <div class="summary-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tema5">
+            <div class="slide title-slide">
+                <img src="https://images.unsplash.com/photo-1600880292210-2e6e1a7b275e?auto=format&fit=crop&w=1470" alt="Lâmpadas de diferentes formas e tamanhos.">
+                <h1>Tema 05: Tipos de Inovação</h1>
+                <h3>Explorando Diferentes Dimensões e Processos</h3>
+            </div>
+             <div class="slide">
+                <h2>Os 4 Tipos de Inovação</h2>
+                <p>A inovação pode ser classificada com base no seu impacto na tecnologia e no mercado:</p>
+                <ul>
+                    <li><strong>Inovação Incremental:</strong> Melhorias graduais e contínuas em produtos ou processos já existentes. Ex: Novas versões de um smartphone.</li>
+                    <li><strong>Inovação Radical:</strong> Cria algo completamente novo, que pode criar um novo mercado. Ex: A invenção do avião.</li>
+                    <li><strong>Inovação Disruptiva:</strong> Cria um novo mercado e desestabiliza os concorrentes existentes, muitas vezes com uma solução mais simples e acessível. Ex: Netflix vs. locadoras.</li>
+                    <li><strong>Inovação Arquitetônica:</strong> Aplica tecnologias existentes em um novo mercado. Ex: Usar tecnologia de memória da NASA em calculadoras.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>O Processo de Inovação</h2>
+                <p>A inovação não acontece por acaso, ela segue um processo:</p>
+                <ol>
+                    <li><strong>Identificação de Oportunidades:</strong> Analisar o mercado e as necessidades dos clientes.</li>
+                    <li><strong>Geração de Ideias:</strong> Usar técnicas como brainstorming para criar soluções.</li>
+                    <li><strong>Seleção e Desenvolvimento:</strong> Avaliar as ideias e desenvolver as mais promissoras em conceitos detalhados.</li>
+                    <li><strong>Testes e Validação:</strong> Criar protótipos e validar com o público-alvo.</li>
+                    <li><strong>Lançamento e Monitoramento:</strong> Lançar o produto no mercado e coletar feedback para melhoria contínua.</li>
+                </ol>
+            </div>
+            
+            <div class="slide quiz-container">
+                <h2>Quiz Rápido - Tema 05</h2>
+                <div class="quiz">
+                    <div class="quiz-question" data-tip="A inovação disruptiva não apenas melhora um produto, mas transforma o mercado, tornando as soluções anteriores obsoletas. Pense em como a Netflix mudou a forma como assistimos a filmes.">
+                        <p>1. Qual tipo de inovação cria um novo mercado e desestabiliza os concorrentes existentes, como o Uber fez com os táxis?</p>
+                        <ul class="quiz-options">
+                            <li>a) Inovação Incremental</li>
+                            <li data-correct="true">b) Inovação Disruptiva</li>
+                            <li>c) Inovação Arquitetônica</li>
+                        </ul>
+                    </div>
+                    <div class="quiz-question" data-tip="A inovação incremental foca em melhorias contínuas e de menor risco em produtos que já existem. É como lançar uma nova versão de um software com pequenas atualizações.">
+                        <p>2. A atualização de um aplicativo de celular com novas funcionalidades é um exemplo de qual tipo de inovação?</p>
+                        <ul class="quiz-options">
+                            <li>a) Inovação Radical</li>
+                            <li data-correct="true">b) Inovação Incremental</li>
+                            <li>c) Inovação Disruptiva</li>
+                        </ul>
+                    </div>
+                </div>
+                 <button class="summary-button">Ver Resumo e Dicas</button>
+                <div class="quiz-summary" style="display:none;">
+                    <h3>Resumo do seu Desempenho</h3>
+                    <div class="summary-content"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // --- Lógica de Interatividade do Quiz ---
+            const quizContainers = document.querySelectorAll('.quiz-container');
+
+            quizContainers.forEach(container => {
+                const options = container.querySelectorAll('.quiz-options li');
+                const summaryButton = container.querySelector('.summary-button');
+                const summaryArea = container.querySelector('.quiz-summary');
+                const summaryContent = container.querySelector('.summary-content');
+
+                options.forEach(option => {
+                    option.addEventListener('click', function () {
+                        const questionDiv = this.closest('.quiz-question');
+                        if (questionDiv.classList.contains('answered')) {
+                            return;
+                        }
+                        questionDiv.classList.add('answered');
+
+                        const isCorrect = this.getAttribute('data-correct') === 'true';
+
+                        if (isCorrect) {
+                            this.classList.add('correct');
+                        } else {
+                            this.classList.add('incorrect');
+                            const correctOption = questionDiv.querySelector('li[data-correct="true"]');
+                            if (correctOption) {
+                                correctOption.classList.add('correct');
+                            }
+                        }
+                    });
+                });
+
+                if (summaryButton) {
+                    summaryButton.addEventListener('click', function() {
+                        const questions = container.querySelectorAll('.quiz-question');
+                        let summaryHTML = '<ul>';
+                        let allAnswered = true;
+
+                        questions.forEach((q, index) => {
+                            if (!q.classList.contains('answered')) {
+                                allAnswered = false;
+                            }
+
+                            const questionText = q.querySelector('p').textContent;
+                            const incorrectOption = q.querySelector('li.incorrect');
+                            const correctOption = q.querySelector('li.correct');
+                            const studyTip = q.getAttribute('data-tip');
+
+                            summaryHTML += `<li><strong>Questão ${index + 1}:</strong> ${questionText}<br>`;
+
+                            if (incorrectOption) {
+                                summaryHTML += `<span class="summary-incorrect">Sua resposta estava incorreta.</span><br>`;
+                                summaryHTML += `<strong>Dica de Estudo:</strong> ${studyTip}`;
+                            } else if (correctOption && q.classList.contains('answered')) {
+                                summaryHTML += `<span class="summary-correct">Você acertou! Parabéns!</span>`;
+                            } else {
+                                summaryHTML += `<span class="summary-neutral">Você ainda não respondeu esta questão.</span>`;
+                            }
+                            summaryHTML += '</li>';
+                        });
+
+                        if (!allAnswered) {
+                            alert('Por favor, responda todas as perguntas antes de ver o resumo.');
+                            return;
+                        }
+
+                        summaryHTML += '</ul>';
+                        summaryContent.innerHTML = summaryHTML;
+                        summaryArea.style.display = 'block';
+                        summaryButton.style.display = 'none';
+                    });
+                }
+            });
+
+            // --- Lógica para Navegação com Teclado / Caneta de Apresentação ---
+            const slides = document.querySelectorAll('.slide');
+            const navHeight = document.querySelector('nav').offsetHeight;
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'ArrowRight' || event.key === 'PageDown') {
+                    event.preventDefault();
+                    const currentScroll = window.scrollY;
+                    for (const slide of slides) {
+                        if (slide.offsetTop > currentScroll + 5) {
+                            window.scrollTo({
+                                top: slide.offsetTop - navHeight,
+                                behavior: 'smooth'
+                            });
+                            break;
+                        }
+                    }
+                }
+
+                if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+                    event.preventDefault();
+                    const currentScroll = window.scrollY;
+                    for (let i = slides.length - 1; i >= 0; i--) {
+                        const slide = slides[i];
+                        if (slide.offsetTop < currentScroll - 5) {
+                            window.scrollTo({
+                                top: slide.offsetTop - navHeight,
+                                behavior: 'smooth'
+                            });
+                            break;
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
