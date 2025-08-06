@@ -1,14 +1,17 @@
+/* --- Variáveis Globais de Cores --- */
 :root {
     --primary-color: #4F5D95;
     --secondary-color: #2D3250;
     --light-bg: #F5F7F8;
     --text-color: #333;
+    --card-bg: #FFFFFF;
     --green-correct: #d4edda;
     --red-incorrect: #f8d7da;
     --green-text: #155724;
     --red-text: #721c24;
 }
 
+/* --- Estilos Base --- */
 html {
     scroll-behavior: smooth;
 }
@@ -22,7 +25,87 @@ body {
     line-height: 1.6;
 }
 
-/* --- Base e Estilos Mobile (Mobile-First) --- */
+main {
+    padding-top: 0;
+    /* Removido o padding-top para a nova página inicial */
+}
+
+
+/* --- NOVOS ESTILOS: Cabeçalho da Página de Cards --- */
+.header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* --- NOVOS ESTILOS: Layout dos Cards --- */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.course-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(45, 50, 80, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+/* --- NOVOS ESTILOS: Rodapé --- */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* --- ESTILOS ANTIGOS (para a página de slides, se ainda for usar) --- */
 
 nav {
     position: fixed;
@@ -31,13 +114,13 @@ nav {
     background-color: var(--secondary-color);
     padding: 0.8rem 0;
     display: flex;
-    justify-content: flex-start; /* Alinha itens ao início */
+    justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    overflow-x: auto; /* Permite scroll horizontal no menu */
-    -webkit-overflow-scrolling: touch; /* Melhora scroll em iOS */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 nav a {
@@ -48,11 +131,7 @@ nav a {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s;
-    white-space: nowrap; /* Impede que o texto quebre linha */
-}
-
-main {
-    padding-top: 60px; /* Espaço para a navegação fixa */
+    white-space: nowrap;
 }
 
 section {
@@ -67,7 +146,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem 1rem; /* Padding reduzido para mobile */
+    padding: 2rem 1rem;
     box-sizing: border-box;
     border-bottom: 1px dashed #ccc;
 }
@@ -82,7 +161,7 @@ section {
 }
 
 .title-slide h1 {
-    font-size: 2.5rem; /* Fonte menor para mobile */
+    font-size: 2.5rem;
     text-align: center;
 }
 
@@ -93,7 +172,7 @@ section {
 }
 
 .slide h2 {
-    font-size: 2rem; /* Fonte menor para mobile */
+    font-size: 2rem;
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
     border-bottom: 3px solid var(--primary-color);
@@ -101,13 +180,14 @@ section {
     text-align: center;
 }
 
-.slide p, .slide ul li {
+.slide p,
+.slide ul li {
     font-size: 1rem;
     max-width: 90%;
 }
 
 .slide p {
-   text-align: center;
+    text-align: center;
 }
 
 .slide ul {
@@ -120,7 +200,7 @@ section {
     max-height: 250px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     margin-bottom: 1.5rem;
 }
 
@@ -131,18 +211,17 @@ section {
     height: auto;
     border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 pre {
     width: 95%;
     max-width: 900px;
-    font-size: 0.8rem; /* Fonte menor no código para mobile */
-    white-space: pre-wrap; /* Permite quebra de linha no código */
+    font-size: 0.8rem;
+    white-space: pre-wrap;
     word-wrap: break-word;
 }
 
-/* Quiz Styling */
 .quiz-container {
     background-color: #fff;
 }
@@ -157,71 +236,6 @@ pre {
     margin-bottom: 1rem;
 }
 
-.quiz-question p {
-    font-size: 1.1rem;
-}
-
-ul.quiz-options li {
-    padding: 0.8rem;
-}
-
-.activity-slide p {
-    font-size: 1rem;
-}
-
-li.correct, li.incorrect {
-    font-weight: bold;
-}
-
-/* --- Estilos para Tablet (a partir de 768px) --- */
-@media (min-width: 768px) {
-    nav {
-        justify-content: center; /* Centraliza o menu em ecrãs maiores */
-        gap: 1.5rem;
-    }
-
-    nav a {
-        font-size: 1rem;
-    }
-
-    main {
-        padding-top: 70px;
-    }
-    
-    .slide {
-        padding: 2rem 4rem;
-    }
-
-    .title-slide h1 {
-        font-size: 3.5rem;
-    }
-
-    .title-slide h3 {
-        font-size: 1.5rem;
-    }
-
-    .slide h2 {
-        font-size: 2.5rem;
-    }
-
-    .slide p, .slide ul li {
-        font-size: 1.2rem;
-    }
-
-    pre {
-        font-size: 0.9rem;
-    }
-}
-
-/* --- Estilos para Desktop (a partir de 1024px) --- */
-@media (min-width: 1024px) {
-    nav a {
-        padding: 0.5rem 1.5rem;
-    }
-}
-
-
-/* --- Mantém as regras do quiz inalteradas --- */
 ul.quiz-options {
     list-style-type: none;
     padding: 0;
@@ -234,6 +248,7 @@ ul.quiz-options li {
     border: 1px solid #ddd;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    padding: 0.8rem;
 }
 
 ul.quiz-options li:hover {
@@ -257,12 +272,14 @@ li.correct {
     background-color: var(--green-correct);
     color: var(--green-text);
     border-color: var(--green-text);
+    font-weight: bold;
 }
 
 li.incorrect {
     background-color: var(--red-incorrect);
     color: var(--red-text);
     border-color: var(--red-text);
+    font-weight: bold;
 }
 
 .activity-slide {
@@ -273,4 +290,56 @@ li.incorrect {
 .activity-slide h2 {
     color: white;
     border-bottom-color: white;
+}
+
+
+/* --- Media Queries para Responsividade --- */
+@media (min-width: 768px) {
+    .header h1 {
+        font-size: 3rem;
+    }
+
+    .card-container {
+        padding: 3rem;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .slide {
+        padding: 2rem 4rem;
+    }
+
+    .title-slide h1 {
+        font-size: 3.5rem;
+    }
+
+    .title-slide h3 {
+        font-size: 1.5rem;
+    }
+
+    .slide h2 {
+        font-size: 2.5rem;
+    }
+
+    .slide p,
+    .slide ul li {
+        font-size: 1.2rem;
+    }
+
+    pre {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav a {
+        padding: 0.5rem 1.5rem;
+    }
 }

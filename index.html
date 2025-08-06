@@ -4,505 +4,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Programação Back-End com PHP</title>
+    <title>Página Inicial - Cursos e Disciplinas</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
 </head>
 
 <body>
 
-    <nav>
-        <a href="#tema1">Tema 01</a>
-        <a href="#tema2">Tema 02</a>
-        <a href="#tema3">Tema 03</a>
-        <a href="#tema4">Tema 04</a>
-        <a href="#tema5">Tema 05</a>
-        <a href="#tema6">Tema 06</a>
-        <a href="#tema7">Tema 07</a>
-        <a href="#tema8">Tema 08</a>
-        <a href="#tema9">Tema 09</a>
-        <a href="#tema10">Tema 10</a>
-    </nav>
+    <header class="header">
+        <h1>Catálogo de Disciplinas</h1>
+        <p>Explore as áreas de conhecimento e tecnologia.</p>
+    </header>
 
     <main>
-        <section id="tema1">
-            <div class="slide title-slide">
-                <img src="https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?auto=format&fit=crop&w=1470"
-                    alt="Close-up de um monitor exibindo código PHP com sintaxe colorida.">
-                <h1>Tema 01: Conhecendo a Linguagem PHP</h1>
-                <h3>Uma Introdução ao Desenvolvimento Back-End</h3>
-            </div>
-            <div class="slide">
-                <h2>O que é PHP?</h2>
-                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=1470"
-                    alt="Diagrama de fluxo cliente-servidor.">
-                <p>A linguagem PHP (Hypertext Preprocessor), criada por Rasmus Lerdorf em 1994, é uma linguagem de
-                    código aberto voltada para o desenvolvimento web. O código é interpretado no lado do servidor, que
-                    processa a lógica e envia o resultado como uma página HTML para o navegador do usuário.</p>
-            </div>
-            <div class="slide">
-                <h2>Seu Primeiro Código</h2>
-                <p>O código PHP é escrito dentro das tags <code>&lt;?php ... ?&gt;</code> e os arquivos são salvos com a
-                    extensão <code>.php</code>. O comando <code>echo</code> é usado para exibir texto.</p>
-                <pre><code class="language-php">
-&lt;html&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Meu primeiro site com PHP&lt;/h1&gt;
-    &lt;?php
-      echo "Olá, Mundo!";
-    ?&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-                </code></pre>
-            </div>
-            <div class="slide">
-                <h2>Vídeo Complementar</h2>
-                <iframe src="https://www.youtube.com/embed/qFLWokqyYb4"
-                    title="Como funciona o PHP? - @CursoemVideo  de PHP - Gustavo Guanabara" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="slide quiz-container">
-                <h2>Quiz Rápido - Tema 01</h2>
-                <div class="quiz">
-                    <div class="quiz-question"
-                        data-tip="Rasmus Lerdorf é conhecido como o pai da linguagem PHP, tendo lançado a primeira versão em 1994/1995.">
-                        <p>1. Quem foi o criador da linguagem PHP?</p>
-                        <ul class="quiz-options">
-                            <li>a) Guido Van Rossum</li>
-                            <li data-correct="true">b) Rasmus Lerdorf</li>
-                            <li>c) Yukihiro Matsumoto</li>
-                        </ul>
-                    </div>
+        <div class="card-container">
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDY4OTR8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Ilustração de tecnologia com circuitos" class="card-image">
+                <div class="card-content">
+                    <h2>Tecnologia e Sistemas de Informação</h2>
                 </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 01</h2>
-                <p><strong>Desafio em Grupo:</strong> Crie um folder explicando a diferença entre as três linguagens
-                    estudadas: PHP, Ruby e Python. Apresente características encontradas na internet e utilize o celular
-                    para auxiliar.</p>
-            </div>
-        </section>
 
-        <section id="tema2">
-            <div class="slide title-slide">
-                <img src="https://m.media-amazon.com/images/I/71fG1GpNlbL.jpg"
-                    alt="Ilustração de caixas de armazenamento com etiquetas.">
-                <h1>Tema 02: Variáveis e Tipos de Dados</h1>
-                <h3>Armazenando e Manipulando Informações</h3>
-            </div>
-            <div class="slide">
-                <h2>Tipos de Dados Primitivos</h2>
-                <p>Uma variável é um local temporário para guardar dados. Em PHP, elas começam com <code>$</code> e
-                    guardam diferentes tipos de dados.</p>
-                <pre><code class="language-php">
-// String (Texto)
-$nome = "Anselmo";
-
-// Integer (Inteiro)
-$idade = 38;
-
-// Float (Ponto Flutuante / Decimal)
-$salario = 3000.50;
-
-// Boolean (Verdadeiro ou Falso)
-$casado = true;
-                </code></pre>
-            </div>
-            <div class="slide">
-                <h2>Exibição e Concatenação</h2>
-                <p>Use <code>echo</code> para exibir dados. Use o ponto <code>.</code> para unir (concatenar) strings e
-                    variáveis.</p>
-                <pre><code class="language-php">
-$aluno = "Carol almeida";
-$curso = "Técnico em informática";
-
-// Exibindo os dados concatenados
-echo "Aluno: " . $aluno . " | Curso: " . $curso;
-                </code></pre>
-            </div>
-            <div class="slide">
-                <h2>Vídeo Complementar</h2>
-                <iframe src="https://www.youtube.com/embed/vxoSeATv0QA"
-                    title="Dominando o PHP #06 - Tipos de Dados Primitivos (Tipos Especiais)" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="slide quiz-container">
-                <h2>Quiz Rápido - Tema 02</h2>
-                <div class="quiz">
-                    <div class="quiz-question"
-                        data-tip="Para declarar uma variável em PHP, é necessário usar o símbolo $ na frente do nome da variável.">
-                        <p>1. Qual símbolo é obrigatório no início do nome de uma variável em PHP?</p>
-                        <ul class="quiz-options">
-                            <li>a) &</li>
-                            <li>b) %</li>
-                            <li data-correct="true">c) $</li>
-                        </ul>
-                    </div>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDY5NDh8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Lâmpada com uma planta crescendo dentro" class="card-image">
+                <div class="card-content">
+                    <h2>Empreendedorismo e Inovação Sustentável</h2>
                 </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 02</h2>
-                <p><strong>Meu Primeiro Script com Variáveis:</strong> Faça um programa que mostre o nome, a idade e a
-                    escola de um aluno, usando variáveis, o comando `echo` e o operador de concatenação.</p>
-            </div>
-        </section>
-        
-        <section id="tema3">
-            <div class="slide title-slide">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1470"
-                    alt="Gráficos e cálculos em uma tela.">
-                <h1>Tema 03: Operadores</h1>
-                <h3>Realizando Operações e Comparações</h3>
-            </div>
-            <div class="slide">
-                <h2>Operadores Aritméticos</h2>
-                <p>São responsáveis por fazer os cálculos tradicionais usados na matemática.</p>
-                <pre><code class="language-php">
-$v1 = 15;
-$v2 = 12;
 
-$soma = $v1 + $v2; // Adição
-$subtracao = $v1 - $v2; // Subtração
-$multiplicacao = $v1 * $v2; // Multiplicação
-$divisao = $v1 / $v2; // Divisão
-$modulo = $v1 % $v2; // Resto da divisão
-
-echo "A soma é: " . $soma;
-                </code></pre>
-            </div>
-            <div class="slide">
-                <h2>Operadores de Comparação</h2>
-                <p>Têm a finalidade de comparar valores e dados na programação. O resultado é sempre um booleano (`true`
-                    ou `false`).</p>
-                <pre><code class="language-php">
-$b = 10;
-$c = "10";
-
-var_dump($b == $c);   // bool(true) - '==' Igualdade, compara apenas o valor
-var_dump($b === $c);  // bool(false) - '===' Idêntico, compara valor E tipo
-var_dump($b != $c);   // bool(false) - '!=' Não igual
-var_dump($b > 5);     // bool(true) - '>' Maior que
-                </code></pre>
-            </div>
-            <div class="slide">
-                <h2>Vídeo Complementar</h2>
-                <iframe  src="https://www.youtube.com/embed/fCZdbl9-qkw"
-                    title="Operadores Aritméticos - Curso PHP Iniciante #05 - Gustavo Guanabara" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="slide quiz-container">
-                <h2>Quiz Rápido - Tema 03</h2>
-                <div class="quiz">
-                    <div class="quiz-question"
-                        data-tip="O operador '===' (Idêntico) retorna verdadeiro apenas se os operandos forem iguais e do mesmo tipo.">
-                        <p>1. Qual operador é usado para verificar se dois valores são iguais E do mesmo tipo?</p>
-                        <ul class="quiz-options">
-                            <li>a) ==</li>
-                            <li data-correct="true">b) ===</li>
-                            <li>c) !=</li>
-                        </ul>
-                    </div>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDcwMTZ8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Pessoas em uma reunião de negócios" class="card-image">
+                <div class="card-content">
+                    <h2>Educação Corporativa e Comportamental</h2>
                 </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 03</h2>
-                <p><strong>Calculadora de Média:</strong> Faça um algoritmo em PHP que solicita três notas de um aluno,
-                    calcula a média e mostra o resultado na tela, junto com o nome do aluno, usando os elementos `echo`
-                    e o operador ternário.</p>
-            </div>
-        </section>
 
-        <section id="tema4">
-            <div class="slide title-slide">
-                <img src="https://images.unsplash.com/photo-1566841282937-a857a5e85f7a?auto=format&fit=crop&w=1470"
-                    alt="Um fluxograma de decisão.">
-                <h1>Tema 04: Estrutura de Controle</h1>
-                <h3>Tomando Decisões e Repetindo Tarefas</h3>
-            </div>
-            <div class="slide">
-                <h2>Estruturas Condicionais</h2>
-                <p>Permitem que o programa execute blocos de código diferentes com base em condições.</p>
-                <pre><code class="language-php">
-$hora = date('H'); // Pega a hora atual do servidor
-
-if ($hora < 12) { // Caso a expressão seja verdadeira (true), a programação segue um caminho
-  echo "Acorda, Bom dia!";
-} elseif ($hora < 18) { // Combinação entre ELSE e IF
-  echo "Hora do café, Boa tarde!";
-} else { // Caso seja falso, determina-se uma sequência lógica
-  echo "Tomar banho, Boa noite";
-}
-                </code></pre>
-            </div>
-            <div class="slide">
-                <h2>Laços de Repetição (Loops)</h2>
-                <p>Usados para executar o mesmo bloco de código várias vezes.</p>
-                <pre><code class="language-php">
-// 'for': executa um número definido de vezes, com início e fim específico.
-for ($i = 1; $i <= 5; $i++) {
-  echo $i . " ";
-}
-
-// 'while': executa enquanto uma condição for verdadeira. Sabe-se o início, mas não o fim.
-$num = 1;
-while ($num <= 5) {
-  echo $num . " ";
-  $num++;
-}
-
-// 'foreach': ideal para percorrer arrays.
-$frutas = array("Maçã", "Banana", "Laranja");
-foreach ($frutas as $fruta) {
-  echo $fruta . " ";
-}
-                </code></pre>
-            </div>
-            <div class="slide quiz-container">
-                <h2>Quiz Rápido - Tema 04</h2>
-                <div class="quiz">
-                    <div class="quiz-question"
-                        data-tip="O laço 'foreach' foi projetado especificamente para iterar sobre os elementos de um array, tornando o código mais limpo e legível.">
-                        <p>1. Qual laço de repetição é ideal para percorrer todos os itens de um array?</p>
-                        <ul class="quiz-options">
-                            <li>a) for</li>
-                            <li data-correct="true">b) foreach</li>
-                            <li>c) while</li>
-                        </ul>
-                    </div>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDcwNDh8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Monitor exibindo código de programação" class="card-image">
+                <div class="card-content">
+                    <h2>Fundamentos da Programação</h2>
                 </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 04</h2>
-                <p><strong>Calculadora de IMC:</strong> Faça um programa em PHP que define o peso e a altura de uma
-                    pessoa. Calcule e mostre o IMC (Índice de Massa Corporal).</p>
-            </div>
-        </section>
 
-        <section id="tema5">
-            <div class="slide title-slide">
-                <img src="https://images.unsplash.com/photo-1542903660-eedba2cda473?auto=format&fit=crop&w=1470"
-                    alt="Foto de um arquivo com gavetas etiquetadas.">
-                <h1>Tema 05: Conceito sobre Array</h1>
-                <h3>Estruturando Dados de Forma Eficiente</h3>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDcxMDZ8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Servidores em um data center" class="card-image">
+                <div class="card-content">
+                    <h2>Banco de Dados</h2>
+                </div>
             </div>
-            <div class="slide">
-                <h2>Tipos de Array</h2>
-                <p>Um Array é uma estrutura que armazena múltiplos valores em uma única variável.</p>
-                <ul>
-                    <li><strong>Arrays Indexados:</strong> Usam índices numéricos para acessar os elementos.</li>
-                    <li><strong>Arrays Associativos:</strong> Usam chaves alfanuméricas (nomes) para acessar os
-                        elementos.</li>
-                    <li><strong>Arrays Multidimensionais:</strong> Contêm outros arrays como elementos, formando uma
-                        matriz.</li>
-                </ul>
-                <pre><code class="language-php">
-// Array Indexado
-$frutas = array("maçã", "banana", "laranja");
-echo $frutas[0]; // imprime maçã
 
-// Array Associativo
-$pessoa = array("nome" => "João", "idade" => 25);
-echo $pessoa["nome"]; // imprime João
-                </code></pre>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDcxNDR8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Gráficos e fluxogramas em uma tela" class="card-image">
+                <div class="card-content">
+                    <h2>Análise e Projeto em Sistemas</h2>
+                </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 05</h2>
-                <p><strong>Lista de Filmes:</strong> Faça uma matriz (array multidimensional) que organize seus filmes e
-                    gêneros favoritos. Depois, crie outra matriz que selecione somente o gênero que mais predomina na
-                    sua lista.</p>
-            </div>
-        </section>
 
-        <section id="tema6">
-            <div class="slide title-slide">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1470"
-                    alt="Pessoa preenchendo um formulário online.">
-                <h1>Tema 06: Método de envio com GET e POST</h1>
-                <h3>Enviando Dados de Formulários</h3>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDcxODF8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Telas de design de aplicativo em um tablet e celular" class="card-image">
+                <div class="card-content">
+                    <h2>Desenvolvimento de Aplicações</h2>
+                </div>
             </div>
-            <div class="slide">
-                <h2>Métodos GET e POST</h2>
-                <p>Para enviar dados de um formulário HTML para o PHP, usamos os métodos GET e POST.</p>
-                <ul>
-                    <li><strong>Método GET:</strong> Os dados são enviados pela URL. É o método padrão, mas não suporta
-                        grande volume de dados e não é seguro para informações sensíveis.</li>
-                    <li><strong>Método POST:</strong> Os dados não são passados pela URL, mas sim no corpo da
-                        requisição. É considerado mais seguro e recomendado para criar um CRUD.</li>
-                </ul>
-                <pre><code class="language-php">
-// Formulário HTML
-&lt;form action="pag.php" method="post"&gt;
-  Nome: &lt;input type="text" name="cxnome"&gt;
-  &lt;input type="submit" value="Enviar"&gt;
-&lt;/form&gt;
 
-// Recebendo dados com POST em pag.php
-$nome = $_POST["cxnome"];
-echo "Nome: " . $nome;
-                </code></pre>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1624953587687-e271b7b42954?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDcyMTJ8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Logos de diversas linguagens de programação" class="card-image">
+                <div class="card-content">
+                    <h2>Linguagem de Programação</h2>
+                </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 06</h2>
-                <p><strong>Quiz Interativo:</strong> Faça um quiz usando PHP que na primeira tela receba o nome do
-                    participante. Faça 6 perguntas em sequência usando páginas diferentes. Na 7ª página, exiba o
-                    resultado com a quantidade de acertos e um botão para reiniciar.</p>
-            </div>
-        </section>
 
-        <section id="tema7">
-            <div class="slide title-slide">
-                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1470"
-                    alt="Engrenagens e peças de um mecanismo trabalhando juntas.">
-                <h1>Tema 07: Tipos de Funções</h1>
-                <h3>Reutilizando Blocos de Código</h3>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDcyNDB8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Mão segurando um smartphone com ícones de aplicativos" class="card-image">
+                <div class="card-content">
+                    <h2>Programação Mobile</h2>
+                </div>
             </div>
-            <div class="slide">
-                <h2>O que são Funções?</h2>
-                <p>Funções são blocos de código que podem ser reutilizados em diferentes partes do programa, evitando
-                    repetições e facilitando a manutenção. Existem as funções nativas (da própria linguagem) e as
-                    criadas pelo desenvolvedor.</p>
-                <pre><code class="language-php">
-// Para criar uma função, usamos a palavra-chave function
-function soma($a, $b) { // $a e $b são parâmetros
-  $resultado = $a + $b;
-  return $resultado; // 'return' envia um valor de volta
-}
 
-// Para usar a função, basta chamá-la pelo nome
-echo soma(3, 5); // imprime 8
-                </code></pre>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDcyNjh8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Notebook exibindo código HTML, CSS e JavaScript" class="card-image">
+                <div class="card-content">
+                    <h2>Programação Front-End</h2>
+                </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 07</h2>
-                <p><strong>Sistema de Aceitação:</strong> Crie um formulário que receba nome, sexo e idade de uma
-                    pessoa. Em PHP, se a pessoa for do sexo feminino e tiver menos de 25 anos, imprima o nome e a
-                    mensagem: "ACEITA". Caso contrário, imprima o nome e a mensagem: "NÃO ACEITA".</p>
-            </div>
-        </section>
 
-        <section id="tema8">
-            <div class="slide title-slide">
-                <img src="https://images.unsplash.com/photo-1614064641938-28354c433414?auto=format&fit=crop&w=1470"
-                    alt="Um cadeado digital simbolizando segurança.">
-                <h1>Tema 08: Tipos de Cookies e Sessões</h1>
-                <h3>Gerenciando Dados do Usuário</h3>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDczMDJ8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Pessoa gerenciando um site em um notebook" class="card-image">
+                <div class="card-content">
+                    <h2>Administração de Websites</h2>
+                </div>
             </div>
-            <div class="slide">
-                <h2>Cookies vs. Sessões</h2>
-                <ul>
-                    <li><strong>Cookies:</strong> São pequenos arquivos gerados pelo servidor e armazenados no navegador
-                        do cliente. Eles guardam informações como fotos, vídeos e textos para acelerar o acesso futuro.
-                    </li>
-                    <li><strong>Sessões (Session):</strong> Armazenam informações sobre um único usuário no servidor e
-                        ficam disponíveis para todas as páginas da aplicação. São muito úteis para segurança e para
-                        funcionalidades como carrinhos de compra.</li>
-                </ul>
-                <pre><code class="language-php">
-// Para usar sessões, inicie com session_start() em todas as páginas
-session_start();
 
-// Armazenando dados em uma variável de sessão
-$_SESSION["usuario"] = "Anselmo Paulo";
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1599422473859-a4b5b3de3fa2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDczMzB8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Lupa inspecionando um selo de qualidade" class="card-image">
+                <div class="card-content">
+                    <h2>Qualidade de Software</h2>
+                </div>
+            </div>
 
-echo "Usuário logado: " . $_SESSION["usuario"];
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDczNjN8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Designer planejando a interface de um aplicativo" class="card-image">
+                <div class="card-content">
+                    <h2>Experiência de Usuário</h2>
+                </div>
+            </div>
 
-// Para finalizar a sessão (logout)
-session_destroy();
-                </code></pre>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDc0MTB8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Código de programação back-end em uma tela escura" class="card-image">
+                <div class="card-content">
+                    <h2>Programação Back-end</h2>
+                </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 08</h2>
-                <p><strong>Comparador de Pessoas:</strong> Crie uma aplicação com 3 páginas. A primeira página coleta
-                    dados (nome, idade, peso, altura) de uma pessoa e salva na sessão. A segunda página faz o mesmo para
-                    uma segunda pessoa. A terceira página compara e mostra quem é mais alto, mais velho e mais pesado.
-                </p>
-            </div>
-        </section>
 
-        <section id="tema9">
-            <div class="slide title-slide">
-                <img src="https://images.unsplash.com/photo-1549430267-8a5a78f621d3?auto=format&fit=crop&w=1470"
-                    alt="Servidores de banco de dados em um data center.">
-                <h1>Tema 09: Conexão com o banco de dados</h1>
-                <h3>Persistindo Dados com MySQL</h3>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDc0NDV8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Cérebro digital com conexões de inteligência artificial" class="card-image">
+                <div class="card-content">
+                    <h2>Sistemas Inteligentes</h2>
+                </div>
             </div>
-            <div class="slide">
-                <h2>Conectando com MySQL e CRUD</h2>
-                <p>A conexão com o banco de dados é um ponto central de qualquer linguagem de programação. CRUD é um
-                    acrônimo para as quatro operações básicas de um banco de dados: Create (Criar), Read (Ler), Update
-                    (Atualizar) e Delete (Excluir).</p>
-                <pre><code class="language-php">
-// 1. Arquivo de Conexão (conexao.php)
-$server = "localhost";
-$user = "root";
-$password = "";
-$dbname = "bdloja2022";
-$conn = mysqli_connect($server, $user, $password, $dbname);
 
-// 2. Inserindo dados (Create)
-include_once 'conexao.php';
-$nome = $_POST['cnome'];
-$sql = "insert into cliente (nome) values ('$nome')";
-$query = mysqli_query($conn, $sql);
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDc0Nzd8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Conexões de rede globais sobrepostas em um mapa" class="card-image">
+                <div class="card-content">
+                    <h2>Internet e Redes</h2>
+                </div>
+            </div>
 
-// 3. Consultando dados (Read)
-$consultar = "select * from tbcliente";
-$executar = mysqli_query($conn, $consultar);
-while ($linha = mysqli_fetch_array($executar)) {
-    echo "Nome: " . $linha["nome"];
-}
-                </code></pre>
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1614064641938-28354c433414?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTY3MDJ8MHwxfGFsbHx8fHx8fHx8fDE3MjI5NDc1MTd8&ixlib=rb-4.0.3&q=80&w=400"
+                    alt="Cadeado digital simbolizando segurança cibernética" class="card-image">
+                <div class="card-content">
+                    <h2>Segurança da Informação</h2>
+                </div>
             </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 09</h2>
-                <p><strong>Cadastro de Produtos:</strong> Faça um sistema de cadastro de produto com cinco campos,
-                    usando o CRUD completo (Create, Read, Update, Delete) em uma tabela.</p>
-            </div>
-        </section>
 
-        <section id="tema10">
-            <div class="slide title-slide">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1470"
-                    alt="Notebook com código orientado a objetos e diagramas de classe.">
-                <h1>Tema 10: Introdução ao conceito POO e classes com PHP</h1>
-                <h3>Organizando Código com Objetos</h3>
-            </div>
-            <div class="slide">
-                <h2>Classes e Objetos</h2>
-                <p>A Programação Orientada a Objetos (POO) é uma maneira de programar de forma organizada, segura e
-                    reutilizável.</p>
-                <ul>
-                    <li><strong>Classe:</strong> É uma abstração, um modelo para criar objetos. Ela agrupa
-                        comportamentos e características similares.</li>
-                    <li><strong>Objeto:</strong> É a instância de uma classe, ou seja, a sua representação física que
-                        ocupa espaço na memória. Para instanciar uma classe, usa-se o comando `new`.</li>
-                </ul>
-                <pre><code class="language-php">
-// Classe é uma entidade teórica, uma organização
-class Carro {
-    public $fabricante; // 'public' define a visibilidade
-}
-
-// Quando instanciamos, $car1 se torna um objeto
-$car1 = new Carro();
-$car1->fabricante = 'VW'; // Atribuindo um valor à propriedade
-                </code></pre>
-            </div>
-            <div class="slide activity-slide">
-                <h2>Atividade Prática - Tema 10</h2>
-                <p><strong>Lógica de Conexão:</strong> Como você pode encapsular a lógica de conexão a um banco de dados
-                    dentro de uma classe em PHP e por que isso é importante?</p>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="script.js"></script>
+    <footer class="footer">
+        <p>&copy; 2025 - Juliano Silva. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 
 </html>
