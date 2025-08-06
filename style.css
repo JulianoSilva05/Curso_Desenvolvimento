@@ -438,6 +438,19 @@ li.incorrect {
     font-style: italic;
 }
 
+/* --- Estilo para o Feedback Imediato do Quiz --- */
+
+.feedback-tip {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background-color: #fffbe6;
+    /* Amarelo claro */
+    border-left: 4px solid #f0ad4e;
+    /* Laranja */
+    color: #8a6d3b;
+    font-size: 0.95rem;
+    text-align: left;
+}
 
 /* --- Media Queries para Responsividade --- */
 @media (min-width: 768px) {
