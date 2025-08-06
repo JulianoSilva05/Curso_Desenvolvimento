@@ -13,11 +13,11 @@
 <body>
 
     <?php
-        $nomePersonagem = "Capitã Marvel";
-        $idade = 35;
-        $poderPrincipal = "Absorção e Manipulação de Energia";
-        $cidadeNatal = "Boston, MA";
-        $ehHeroi = true;
+    $nomePersonagem = "Capitã Marvel";
+    $idade = 35;
+    $poderPrincipal = "Absorção e Manipulação de Energia";
+    $cidadeNatal = "Boston, MA";
+    $ehHeroi = true;
     ?>
 
     <div class="card">
@@ -28,11 +28,11 @@
         <p><strong>Cidade Natal:</strong> <?php echo $cidadeNatal; ?></p>
 
         <?php
-            if ($ehHeroi) {
-                echo '<p class="hero"><strong>Missão:</strong> Proteger a galáxia de ameaças cósmicas!</p>';
-            } else {
-                echo '<p class="villain"><strong>Objetivo:</strong> Conquistar a Terra em nome do Império Kree.</p>';
-            }
+        if ($ehHeroi) {
+            echo '<p class="hero"><strong>Missão:</strong> Proteger a galáxia de ameaças cósmicas!</p>';
+        } else {
+            echo '<p class="villain"><strong>Objetivo:</strong> Conquistar a Terra em nome do Império Kree.</p>';
+        }
         ?>
     </div>
 
